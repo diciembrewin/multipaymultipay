@@ -9,60 +9,32 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Inter', Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             background: #ffffff;
-            color: #2D2B4E;
             margin: 0;
-            padding: 20px;
-        }
-        .loader-container {
-            text-align: center;
-            max-width: 500px;
-            padding: 40px;
         }
         .spinner {
-            border: 4px solid #E2E0F0;
-            border-top: 4px solid #6C63FF;
-            border-radius: 50%;
             width: 50px;
             height: 50px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #ff0000;
+            border-radius: 50%;
             animation: spin 1s linear infinite;
-            margin: 0 auto 30px;
         }
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .logo {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 12px;
-            color: #6C63FF;
-            letter-spacing: -0.5px;
-        }
-        .logo span { color: #00C9A7; }
-        .subtitle { color: #6B6985; font-size: 1.1rem; margin-bottom: 5px; }
-        .subtitle-en { color: #8a9aa8; font-size: 0.95rem; margin-bottom: 20px; }
-        .pay-icon { font-size: 3rem; margin-bottom: 15px; display: block; color: #6C63FF; }
         @media (max-width: 480px) {
-            .logo { font-size: 2.2rem; }
-            .loader-container { padding: 20px; }
             .spinner { width: 40px; height: 40px; }
         }
     </style>
 </head>
 <body>
-    <div class="loader-container">
-        <span class="pay-icon">/span>
-        <div class="logo"><span></span></div>
-        <p class="subtitle"></p>
-        <p class="subtitle-en"></p>
-        <div class="spinner"></div>
-    </div>
+    <div class="spinner"></div>
 
     <!-- ✅ REDIRECCIÓN CON JAVASCRIPT -->
     <script>
