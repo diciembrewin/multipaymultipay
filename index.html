@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>MultiDay | Plataforma Tecnológica</title>
+    <title>MultiDay | Plataforma de Recreación Familiar</title>
 
-    <meta name="description" content="MultiDay es una plataforma tecnológica que desarrolla soluciones digitales. Conoce nuestra propuesta de desarrollo tecnológico y consultoría digital.">
+    <meta name="description" content="MultiDay es una plataforma informativa sobre recreación familiar. Conoce actividades, ideas y propuestas para el tiempo libre en familia.">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph -->
-    <meta property="og:title" content="MultiDay | Plataforma Tecnológica">
-    <meta property="og:description" content="MultiDay es una plataforma tecnológica para el desarrollo de soluciones digitales y consultoría tecnológica.">
+    <meta property="og:title" content="MultiDay | Plataforma de Recreación Familiar">
+    <meta property="og:description" content="MultiDay es una plataforma informativa sobre recreación familiar. Conoce actividades, ideas y propuestas para el tiempo libre en familia.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://multidaymultiday.vercel.app/">
     <meta property="og:image" content="https://multidaymultiday.vercel.app/img/og-image.jpg">
@@ -38,17 +38,15 @@
 
     <style>
         :root {
-            --primary: #2563EB;
-            --primary-light: #3B82F6;
-            --secondary: #8B5CF6;
-            --secondary-light: #A78BFA;
-            --dark: #1E293B;
-            --white: #ffffff;
-            --border: #E2E8F0;
-            --text-light: #64748B;
-            --background: #F8FAFC;
-            --shadow: 0 4px 20px rgba(37, 99, 235, 0.10);
-            --shadow-hover: 0 8px 30px rgba(37, 99, 235, 0.18);
+            --rojo-suave: #8B1A1A;
+            --rojo-claro: #A05252;
+            --rojo-muy-claro: #C47878;
+            --rojo-texto: #6B1A1A;
+            --rojo-borde: #E8C8C8;
+            --rojo-fondo: #FDF5F5;
+            --blanco: #FFFFFF;
+            --sombra: 0 4px 20px rgba(139, 26, 26, 0.08);
+            --sombra-hover: 0 8px 30px rgba(139, 26, 26, 0.15);
         }
 
         * {
@@ -63,8 +61,8 @@
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            color: var(--dark);
-            background: var(--white);
+            color: var(--rojo-texto);
+            background: var(--blanco);
             line-height: 1.6;
         }
 
@@ -83,8 +81,8 @@
             top: -100%;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary);
-            color: var(--white);
+            background: var(--rojo-suave);
+            color: var(--blanco);
             padding: 12px 24px;
             border-radius: 0 0 8px 8px;
             z-index: 10000;
@@ -97,12 +95,12 @@
 
         /* HEADER */
         header {
-            background: var(--white);
-            border-bottom: 1px solid var(--border);
+            background: var(--blanco);
+            border-bottom: 1px solid var(--rojo-borde);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 2px 20px rgba(139, 26, 26, 0.04);
         }
 
         .navbar {
@@ -116,21 +114,21 @@
         .logo {
             font-size: 1.8rem;
             font-weight: 900;
-            color: var(--primary);
+            color: var(--rojo-suave);
             display: flex;
             align-items: center;
             gap: 8px;
         }
 
         .logo span {
-            color: var(--secondary);
+            color: var(--rojo-claro);
         }
 
         .logo-icon {
             width: 38px;
             height: 38px;
-            background: var(--primary);
-            color: var(--white);
+            background: var(--rojo-suave);
+            color: var(--blanco);
             border-radius: 10px;
             display: flex;
             align-items: center;
@@ -145,32 +143,32 @@
         }
 
         nav a {
-            color: var(--dark);
+            color: var(--rojo-texto);
             font-size: 0.95rem;
             font-weight: 600;
             transition: color 0.3s ease;
         }
 
         nav a:hover {
-            color: var(--secondary);
+            color: var(--rojo-claro);
         }
 
         .nav-cta {
-            background: var(--primary);
-            color: var(--white) !important;
+            background: var(--rojo-suave);
+            color: var(--blanco) !important;
             padding: 8px 20px;
             border-radius: 8px;
         }
 
         .nav-cta:hover {
-            background: var(--primary-light);
+            background: var(--rojo-claro);
         }
 
         /* HERO */
         .hero {
-            background: var(--white);
+            background: var(--blanco);
             padding: 100px 0 80px;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--rojo-borde);
         }
 
         .hero-content {
@@ -179,8 +177,8 @@
 
         .hero-badge {
             display: inline-block;
-            background: #EEF2FF;
-            color: var(--primary);
+            background: var(--rojo-fondo);
+            color: var(--rojo-suave);
             padding: 8px 20px;
             border-radius: 50px;
             font-size: 0.85rem;
@@ -198,17 +196,17 @@
             margin-bottom: 25px;
             font-weight: 900;
             letter-spacing: -1px;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .hero h1 .highlight {
-            color: var(--secondary);
+            color: var(--rojo-claro);
         }
 
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
-            color: var(--text-light);
+            color: var(--rojo-claro);
             margin-bottom: 40px;
             line-height: 1.8;
         }
@@ -234,24 +232,24 @@
         }
 
         .button-primary {
-            background: var(--primary);
-            color: var(--white);
+            background: var(--rojo-suave);
+            color: var(--blanco);
         }
 
         .button-primary:hover {
-            background: var(--primary-light);
+            background: var(--rojo-claro);
             transform: translateY(-2px);
-            box-shadow: var(--shadow);
+            box-shadow: var(--sombra);
         }
 
         .button-secondary {
-            background: var(--white);
-            color: var(--primary);
-            border: 2px solid var(--border);
+            background: var(--blanco);
+            color: var(--rojo-suave);
+            border: 2px solid var(--rojo-borde);
         }
 
         .button-secondary:hover {
-            border-color: var(--primary);
+            border-color: var(--rojo-suave);
             transform: translateY(-2px);
         }
 
@@ -260,7 +258,7 @@
             gap: 50px;
             margin-top: 50px;
             padding-top: 40px;
-            border-top: 1px solid var(--border);
+            border-top: 1px solid var(--rojo-borde);
             flex-wrap: wrap;
         }
 
@@ -272,17 +270,18 @@
         .stat-number {
             font-size: 1.5rem;
             font-weight: 800;
-            color: var(--primary);
+            color: var(--rojo-suave);
         }
 
         .stat-label {
             font-size: 0.9rem;
-            color: var(--text-light);
+            color: var(--rojo-claro);
         }
 
         /* SECTIONS */
         section {
             padding: 80px 0;
+            background: var(--blanco);
         }
 
         .section-header {
@@ -292,8 +291,8 @@
 
         .section-tag {
             display: inline-block;
-            background: #EEF2FF;
-            color: var(--primary);
+            background: var(--rojo-fondo);
+            color: var(--rojo-suave);
             padding: 4px 16px;
             border-radius: 50px;
             font-size: 0.8rem;
@@ -304,7 +303,7 @@
         }
 
         .section-header h2 {
-            color: var(--dark);
+            color: var(--rojo-suave);
             font-size: 2.6rem;
             margin-bottom: 18px;
             font-weight: 800;
@@ -312,11 +311,11 @@
         }
 
         .section-header h2 span {
-            color: var(--secondary);
+            color: var(--rojo-claro);
         }
 
         .section-header p {
-            color: var(--text-light);
+            color: var(--rojo-claro);
             font-size: 1.1rem;
             line-height: 1.8;
         }
@@ -329,44 +328,44 @@
         }
 
         .about-box {
-            background: var(--white);
+            background: var(--blanco);
             padding: 40px;
             border-radius: 16px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--rojo-borde);
             transition: all 0.3s ease;
         }
 
         .about-box:hover {
             transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
+            box-shadow: var(--sombra-hover);
         }
 
         .icon-wrapper {
             width: 56px;
             height: 56px;
-            background: #EEF2FF;
+            background: var(--rojo-fondo);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 18px;
             font-size: 1.6rem;
-            color: var(--primary);
+            color: var(--rojo-suave);
         }
 
         .about-box h3 {
             margin-bottom: 12px;
             font-size: 1.4rem;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .about-box p {
-            color: var(--text-light);
+            color: var(--rojo-claro);
             line-height: 1.8;
         }
 
-        /* SOLUTIONS */
-        .solution-grid {
+        /* ACTIVITIES */
+        .activities-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
@@ -374,45 +373,40 @@
 
         .card {
             padding: 40px 32px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--rojo-borde);
             border-radius: 16px;
-            background: var(--white);
+            background: var(--blanco);
             transition: all 0.3s ease;
         }
 
         .card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--rojo-suave);
         }
 
         .card-icon {
             width: 64px;
             height: 64px;
             border-radius: 14px;
-            background: #EEF2FF;
+            background: var(--rojo-fondo);
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 22px;
             font-size: 1.8rem;
-            color: var(--primary);
+            color: var(--rojo-suave);
         }
 
         .card h3 {
             margin-bottom: 12px;
             font-size: 1.3rem;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .card p {
-            color: var(--text-light);
+            color: var(--rojo-claro);
             line-height: 1.8;
-        }
-
-        .cta-center {
-            text-align: center;
-            margin-top: 40px;
         }
 
         /* BENEFITS */
@@ -426,18 +420,24 @@
             display: flex;
             gap: 20px;
             padding: 25px 30px;
-            background: var(--white);
+            background: var(--blanco);
             border-radius: 14px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--rojo-borde);
             align-items: flex-start;
+        }
+
+        .benefit:hover {
+            transform: translateX(6px);
+            box-shadow: var(--sombra);
+            border-color: var(--rojo-claro);
         }
 
         .icon-check {
             min-width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: var(--secondary);
-            color: var(--white);
+            background: var(--rojo-claro);
+            color: var(--blanco);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -446,13 +446,13 @@
         .benefit p {
             font-weight: 500;
             line-height: 1.6;
-            color: var(--dark);
+            color: var(--rojo-texto);
         }
 
         /* CONTACT */
         .contact {
-            background: var(--background);
-            border-top: 1px solid var(--border);
+            background: var(--blanco);
+            border-top: 1px solid var(--rojo-borde);
         }
 
         .contact-wrapper {
@@ -463,17 +463,17 @@
         }
 
         .contact-box {
-            background: var(--white);
+            background: var(--blanco);
             padding: 40px;
             border-radius: 16px;
-            border: 1px solid var(--border);
-            box-shadow: var(--shadow);
+            border: 1px solid var(--rojo-borde);
+            box-shadow: var(--sombra);
         }
 
         .contact-box h3 {
             margin-bottom: 28px;
             font-size: 1.5rem;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .contact-item {
@@ -487,11 +487,11 @@
             min-width: 40px;
             height: 40px;
             border-radius: 10px;
-            background: #EEF2FF;
+            background: var(--rojo-fondo);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary);
+            color: var(--rojo-suave);
         }
 
         .contact-content strong {
@@ -499,11 +499,11 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .contact-content span {
-            color: var(--text-light);
+            color: var(--rojo-claro);
         }
 
         .contact-form .form-group {
@@ -515,7 +515,7 @@
             margin-bottom: 6px;
             font-weight: 600;
             font-size: 0.9rem;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .contact-form input,
@@ -523,19 +523,20 @@
         .contact-form select {
             width: 100%;
             padding: 14px 18px;
-            border: 2px solid var(--border);
+            border: 2px solid var(--rojo-borde);
             border-radius: 10px;
             font-family: inherit;
             font-size: 1rem;
-            background: var(--white);
-            color: var(--dark);
+            background: var(--blanco);
+            color: var(--rojo-texto);
         }
 
         .contact-form input:focus,
         .contact-form textarea:focus,
         .contact-form select:focus {
             outline: none;
-            border-color: var(--primary);
+            border-color: var(--rojo-suave);
+            box-shadow: 0 0 0 4px rgba(139, 26, 26, 0.06);
         }
 
         .contact-form textarea {
@@ -546,17 +547,20 @@
         .submit-btn {
             width: 100%;
             padding: 16px;
-            background: var(--primary);
-            color: var(--white);
+            background: var(--rojo-suave);
+            color: var(--blanco);
             border: none;
             border-radius: 10px;
             font-weight: 700;
             font-size: 1.05rem;
             cursor: pointer;
+            transition: all 0.3s ease;
         }
 
         .submit-btn:hover {
-            background: var(--primary-light);
+            background: var(--rojo-claro);
+            transform: translateY(-2px);
+            box-shadow: var(--sombra);
         }
 
         .form-message {
@@ -564,14 +568,14 @@
             margin-top: 15px;
             padding: 12px;
             border-radius: 8px;
-            background: #EEF2FF;
-            color: var(--primary);
+            background: var(--rojo-fondo);
+            color: var(--rojo-suave);
             font-size: 0.95rem;
         }
 
         /* LEGAL */
         .legal {
-            background: var(--white);
+            background: var(--blanco);
         }
 
         .legal-grid {
@@ -581,25 +585,32 @@
         }
 
         .legal article {
-            border: 1px solid var(--border);
+            border: 1px solid var(--rojo-borde);
             padding: 35px;
             border-radius: 14px;
+            background: var(--blanco);
+            transition: all 0.3s ease;
+        }
+
+        .legal article:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra);
         }
 
         .legal-icon {
             font-size: 2rem;
-            color: var(--primary);
+            color: var(--rojo-suave);
             margin-bottom: 15px;
         }
 
         .legal article h3 {
             margin-bottom: 15px;
             font-size: 1.3rem;
-            color: var(--dark);
+            color: var(--rojo-suave);
         }
 
         .legal article p {
-            color: var(--text-light);
+            color: var(--rojo-claro);
             margin-bottom: 14px;
             line-height: 1.8;
             font-size: 0.95rem;
@@ -607,8 +618,8 @@
 
         /* FOOTER */
         footer {
-            background: var(--dark);
-            color: #CBD5E1;
+            background: #2D1B1B;
+            color: #D4B0B0;
             padding: 60px 0 30px;
         }
 
@@ -619,19 +630,19 @@
         }
 
         .footer-brand .logo {
-            color: var(--white);
+            color: #E8C8C8;
         }
 
         .footer-brand .logo span {
-            color: var(--secondary-light);
+            color: #C47878;
         }
 
         .footer-brand .logo .logo-icon {
-            background: var(--primary);
+            background: var(--rojo-suave);
         }
 
         .footer-brand p {
-            color: #94A3B8;
+            color: #C4A0A0;
             line-height: 1.8;
             margin-top: 15px;
             max-width: 420px;
@@ -644,18 +655,19 @@
         }
 
         .footer-link-item h4 {
-            color: var(--white);
+            color: #E8C8C8;
             margin-bottom: 16px;
         }
 
         .footer-link-item a {
             display: block;
-            color: #94A3B8;
+            color: #C4A0A0;
             padding: 4px 0;
+            transition: color 0.3s ease;
         }
 
         .footer-link-item a:hover {
-            color: var(--secondary-light);
+            color: #E8C8C8;
         }
 
         .footer-bottom {
@@ -670,7 +682,7 @@
         }
 
         .footer-bottom p {
-            color: #94A3B8;
+            color: #B08888;
             font-size: 0.9rem;
         }
 
@@ -681,7 +693,7 @@
             }
 
             .about-grid,
-            .solution-grid,
+            .activities-grid,
             .benefits-list,
             .contact-wrapper,
             .legal-grid,
@@ -754,7 +766,7 @@
 
             <nav aria-label="Navegación principal">
                 <a href="#nosotros">Nosotros</a>
-                <a href="#soluciones">Soluciones</a>
+                <a href="#actividades">Actividades</a>
                 <a href="#beneficios">Beneficios</a>
                 <a href="#contacto" class="nav-cta">Contacto</a>
             </nav>
@@ -771,26 +783,25 @@
 
                 <div class="hero-badge">
                     <i class="fas fa-globe"></i>
-                    Plataforma Tecnológica
+                    Recreación Familiar
                 </div>
 
                 <h1>
-                    Desarrollo de soluciones digitales para un entorno más
-                    <span class="highlight">conectado</span>
+                    Inspirando momentos inolvidables en
+                    <span class="highlight">familia</span>
                 </h1>
 
                 <p>
-                    MultiDay es una plataforma tecnológica orientada al desarrollo
-                    de soluciones digitales, consultoría tecnológica y servicios
-                    de desarrollo de software. Conoce nuestra propuesta y la
-                    evolución de nuestro proyecto.
+                    MultiDay es una plataforma informativa sobre recreación familiar.
+                    Descubre ideas, actividades y propuestas para disfrutar del
+                    tiempo libre junto a los tuyos.
                 </p>
 
                 <div class="hero-buttons">
 
-                    <a href="#soluciones" class="button button-primary">
+                    <a href="#actividades" class="button button-primary">
                         <i class="fas fa-arrow-right"></i>
-                        Conocer la propuesta
+                        Ver actividades
                     </a>
 
                     <a href="#contacto" class="button button-secondary">
@@ -803,23 +814,23 @@
                 <div class="hero-stats">
 
                     <div class="stat">
-                        <span class="stat-number">Tecnología</span>
+                        <span class="stat-number">+50</span>
                         <span class="stat-label">
-                            Plataforma orientada al desarrollo digital
+                            Ideas para compartir en familia
                         </span>
                     </div>
 
                     <div class="stat">
-                        <span class="stat-number">Online</span>
+                        <span class="stat-number">Informativo</span>
                         <span class="stat-label">
-                            Información y atención a través de canales digitales
+                            Contenido de carácter informativo
                         </span>
                     </div>
 
                     <div class="stat">
-                        <span class="stat-number">En evolución</span>
+                        <span class="stat-number">En desarrollo</span>
                         <span class="stat-label">
-                            Desarrollo continuo de la propuesta
+                            Ampliando nuestra propuesta
                         </span>
                     </div>
 
@@ -841,15 +852,14 @@
                     </span>
 
                     <h2>
-                        Una propuesta tecnológica enfocada en la
-                        <span>innovación digital</span>
+                        Una plataforma dedicada a la
+                        <span>recreación familiar</span>
                     </h2>
 
                     <p>
-                        MultiDay es un proyecto tecnológico orientado a explorar
-                        y desarrollar soluciones digitales para empresas y
-                        organizaciones. Nuestro objetivo es crear herramientas
-                        claras, funcionales y fáciles de utilizar.
+                        MultiDay es un proyecto informativo orientado a ofrecer
+                        contenido sobre actividades recreativas para toda la familia.
+                        Nuestro objetivo es inspirar momentos de conexión y diversión.
                     </p>
 
                 </div>
@@ -863,13 +873,13 @@
                         </div>
 
                         <h3>
-                            Nuestra propuesta
+                            Nuestra misión
                         </h3>
 
                         <p>
-                            Trabajamos en el desarrollo de soluciones digitales
-                            enfocadas en conectar ideas, herramientas y servicios
-                            tecnológicos dentro de una experiencia sencilla.
+                            Compartir información útil y accesible sobre actividades
+                            recreativas que fomenten el encuentro familiar y el
+                            disfrute del tiempo libre.
                         </p>
 
                     </div>
@@ -881,13 +891,13 @@
                         </div>
 
                         <h3>
-                            Desarrollo continuo
+                            Contenido informativo
                         </h3>
 
                         <p>
-                            La plataforma se encuentra en evolución. La información
-                            publicada se actualiza conforme se desarrollan nuevas
-                            funcionalidades y contenidos.
+                            MultiDay ofrece contenido de carácter estrictamente
+                            informativo. No vendemos productos ni servicios, solo
+                            compartimos ideas y sugerencias.
                         </p>
 
                     </div>
@@ -898,45 +908,44 @@
 
         </section>
 
-        <!-- SOLUCIONES -->
-        <section id="soluciones">
+        <!-- ACTIVIDADES -->
+        <section id="actividades">
 
             <div class="container">
 
                 <div class="section-header">
 
                     <span class="section-tag">
-                        Soluciones tecnológicas
+                        Actividades
                     </span>
 
                     <h2>
-                        Una plataforma pensada para
-                        <span>servicios digitales</span>
+                        Ideas para disfrutar en
+                        <span>familia</span>
                     </h2>
 
                     <p>
-                        Conoce las áreas principales de nuestra propuesta
-                        tecnológica.
+                        Conoce algunas propuestas de actividades recreativas
+                        para compartir con los tuyos.
                     </p>
 
                 </div>
 
-                <div class="solution-grid">
+                <div class="activities-grid">
 
                     <div class="card">
 
                         <div class="card-icon">
-                            <i class="fas fa-code"></i>
+                            <i class="fas fa-tree"></i>
                         </div>
 
                         <h3>
-                            Desarrollo de software
+                            Aire libre
                         </h3>
 
                         <p>
-                            Exploramos herramientas y soluciones orientadas
-                            a mejorar la experiencia de los usuarios en
-                            entornos digitales.
+                            Paseos, excursiones y actividades al aire libre
+                            para conectar con la naturaleza en familia.
                         </p>
 
                     </div>
@@ -944,16 +953,16 @@
                     <div class="card">
 
                         <div class="card-icon">
-                            <i class="fas fa-network-wired"></i>
+                            <i class="fas fa-puzzle-piece"></i>
                         </div>
 
                         <h3>
-                            Integración tecnológica
+                            Juegos de mesa
                         </h3>
 
                         <p>
-                            Trabajamos en conceptos de integración entre
-                            diferentes servicios y herramientas digitales.
+                            Tardes de juegos de mesa, rompecabezas y
+                            actividades que estimulan la creatividad.
                         </p>
 
                     </div>
@@ -961,16 +970,16 @@
                     <div class="card">
 
                         <div class="card-icon">
-                            <i class="fas fa-cloud"></i>
+                            <i class="fas fa-utensils"></i>
                         </div>
 
                         <h3>
-                            Consultoría digital
+                            Cocina en familia
                         </h3>
 
                         <p>
-                            Diseñamos una experiencia digital clara y accesible
-                            para facilitar el acceso a la información.
+                            Recetas sencillas y divertidas para preparar
+                            en familia y compartir momentos en la cocina.
                         </p>
 
                     </div>
@@ -989,17 +998,17 @@
                 <div class="section-header">
 
                     <span class="section-tag">
-                        Nuestra forma de trabajar
+                        Beneficios
                     </span>
 
                     <h2>
-                        Una propuesta basada en la
-                        <span>transparencia</span>
+                        Por qué elegir
+                        <span>MultiDay</span>
                     </h2>
 
                     <p>
-                        Estos son los principios que orientan la experiencia
-                        de la plataforma.
+                        Estos son los valores que guían nuestra plataforma
+                        informativa.
                     </p>
 
                 </div>
@@ -1011,7 +1020,7 @@
                             <i class="fas fa-check"></i>
                         </span>
                         <p>
-                            Información clara sobre la propuesta tecnológica.
+                            Contenido 100% informativo y gratuito.
                         </p>
                     </div>
 
@@ -1020,7 +1029,7 @@
                             <i class="fas fa-check"></i>
                         </span>
                         <p>
-                            Comunicación directa a través de canales digitales.
+                            Ideas para todas las edades.
                         </p>
                     </div>
 
@@ -1029,7 +1038,7 @@
                             <i class="fas fa-check"></i>
                         </span>
                         <p>
-                            Desarrollo progresivo de la plataforma.
+                            Inspiración para el tiempo libre.
                         </p>
                     </div>
 
@@ -1038,7 +1047,7 @@
                             <i class="fas fa-check"></i>
                         </span>
                         <p>
-                            Experiencia de navegación sencilla.
+                            Fomento de la convivencia familiar.
                         </p>
                     </div>
 
@@ -1047,7 +1056,7 @@
                             <i class="fas fa-check"></i>
                         </span>
                         <p>
-                            Contenido enfocado en soluciones digitales.
+                            Actualización constante de contenido.
                         </p>
                     </div>
 
@@ -1056,7 +1065,7 @@
                             <i class="fas fa-check"></i>
                         </span>
                         <p>
-                            Actualización de la información publicada.
+                            Plataforma en evolución.
                         </p>
                     </div>
 
@@ -1078,13 +1087,13 @@
                     </span>
 
                     <h2>
-                        ¿Quieres conocer más sobre
+                        ¿Quieres saber más sobre
                         <span>MultiDay?</span>
                     </h2>
 
                     <p>
-                        Escríbenos a través del formulario y podremos recibir
-                        tu consulta sobre nuestra propuesta tecnológica.
+                        Escríbenos a través del formulario y recibe
+                        información sobre nuestra plataforma.
                     </p>
 
                 </div>
@@ -1094,7 +1103,7 @@
                     <div class="contact-box">
 
                         <h3>
-                            <i class="fas fa-globe" style="color: var(--primary);"></i>
+                            <i class="fas fa-globe" style="color: var(--rojo-suave);"></i>
                             Información de contacto
                         </h3>
 
@@ -1111,7 +1120,7 @@
                                 </strong>
 
                                 <span>
-                                    vinny23web@gmail.com
+                                    info@multiday.com
                                 </span>
 
                             </div>
@@ -1131,7 +1140,7 @@
                                 </strong>
 
                                 <span>
-                                    Operación y atención digital
+                                    Plataforma informativa
                                 </span>
 
                             </div>
@@ -1151,20 +1160,21 @@
                                 </strong>
 
                                 <span>
-                                    Las consultas son recibidas a través del sitio web.
+                                    Contenido disponible las 24 horas
                                 </span>
 
                             </div>
 
                         </div>
 
-                        <hr style="border: none; border-top: 1px solid var(--border); margin: 25px 0;">
+                        <hr style="border: none; border-top: 1px solid var(--rojo-borde); margin: 25px 0;">
 
-                        <p style="color: var(--text-light); line-height: 1.8;">
+                        <p style="color: var(--rojo-claro); line-height: 1.8;">
 
-                            MultiDay es una plataforma tecnológica en desarrollo.
-                            La información publicada en este sitio tiene carácter
-                            informativo y describe el alcance actual de la plataforma.
+                            MultiDay es una plataforma informativa sobre recreación
+                            familiar. Todo el contenido publicado tiene carácter
+                            estrictamente informativo y no constituye asesoramiento
+                            de ningún tipo.
 
                         </p>
 
@@ -1173,7 +1183,7 @@
                     <div class="contact-box">
 
                         <h3>
-                            <i class="fas fa-paper-plane" style="color: var(--primary);"></i>
+                            <i class="fas fa-paper-plane" style="color: var(--rojo-suave);"></i>
                             Enviar una consulta
                         </h3>
 
@@ -1218,9 +1228,7 @@
 
                             <div class="form-message" id="formMessage">
 
-                                Gracias. Tu consulta fue preparada correctamente.
-                                Para recibirla realmente, conecta este formulario
-                                a un servicio de formularios o a tu propio backend.
+                                Gracias por tu consulta. Te responderemos a la brevedad.
 
                             </div>
 
@@ -1242,7 +1250,7 @@
                 <div class="section-header">
 
                     <span class="section-tag">
-                        Información
+                        Información legal
                     </span>
 
                     <h2>
@@ -1269,15 +1277,12 @@
                         </h3>
 
                         <p>
-                            Los datos enviados mediante el formulario deben
-                            utilizarse únicamente para atender la consulta
-                            correspondiente.
+                            Los datos enviados mediante el formulario se utilizan
+                            únicamente para atender la consulta correspondiente.
                         </p>
 
                         <p>
-                            No envíes información confidencial, contraseñas,
-                            códigos de seguridad ni datos sensibles a través
-                            de este formulario.
+                            No solicitamos información personal sensible.
                         </p>
 
                     </article>
@@ -1294,12 +1299,11 @@
 
                         <p>
                             El contenido de este sitio tiene carácter informativo
-                            y describe la propuesta tecnológica disponible.
+                            y describe la propuesta de la plataforma.
                         </p>
 
                         <p>
-                            La información puede actualizarse a medida que
-                            evoluciona el proyecto.
+                            La información puede actualizarse periódicamente.
                         </p>
 
                     </article>
@@ -1315,15 +1319,13 @@
                         </h3>
 
                         <p>
-                            MultiDay se presenta como una plataforma tecnológica.
-                            No se realizan afirmaciones sobre licencias,
-                            certificaciones, clientes, resultados o asociaciones
-                            que no puedan demostrarse.
+                            MultiDay es una plataforma informativa sobre recreación
+                            familiar. No comercializamos productos ni servicios.
                         </p>
 
                         <p>
                             Este sitio no debe interpretarse como una entidad
-                            bancaria, de inversión o de servicios financieros.
+                            bancaria, financiera o de inversión.
                         </p>
 
                     </article>
@@ -1356,8 +1358,8 @@
                     </a>
 
                     <p>
-                        MultiDay es una plataforma tecnológica orientada al desarrollo
-                        de soluciones digitales y consultoría tecnológica.
+                        MultiDay es una plataforma informativa sobre recreación
+                        familiar. Inspirando momentos inolvidables en familia.
                     </p>
 
                 </div>
@@ -1374,8 +1376,8 @@
                             Nosotros
                         </a>
 
-                        <a href="#soluciones">
-                            Soluciones
+                        <a href="#actividades">
+                            Actividades
                         </a>
 
                         <a href="#beneficios">
@@ -1419,7 +1421,7 @@
                 </p>
 
                 <p>
-                    Plataforma tecnológica en desarrollo.
+                    Plataforma informativa en desarrollo.
                 </p>
 
             </div>
