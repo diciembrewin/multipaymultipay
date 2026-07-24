@@ -1,1514 +1,1511 @@
 <!DOCTYPE html>
-
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>MultiPay | Plataforma digital</title>
+    <title>MultiPay | Plataforma digital</title>
+
+    <meta name="description" content="MultiPay es una plataforma digital que desarrolla soluciones tecnológicas para servicios digitales. Conoce nuestra propuesta y ponte en contacto con nuestro equipo.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MultiPay | Plataforma digital">
+    <meta property="og:description" content="Conoce la propuesta digital de MultiPay y nuestras soluciones tecnológicas.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TU-DOMINIO-REAL.com/">
+    <meta property="og:image" content="https://TU-DOMINIO-REAL.com/img/og-image.jpg">
+
+    <link rel="canonical" href="https://TU-DOMINIO-REAL.com/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18340812821">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-18340812821');
+    </script>
+
+    <style>
+        :root {
+            --primary: #8B1A1A;
+            --primary-light: #A05252;
+            --secondary: #A05252;
+            --secondary-light: #C47878;
+            --dark: #4A1A1A;
+            --white: #ffffff;
+            --border: #E8C8C8;
+            --text-light: #8B4A4A;
+            --background: #FFF8F8;
+            --shadow: 0 4px 20px rgba(139, 26, 26, 0.10);
+            --shadow-hover: 0 8px 30px rgba(139, 26, 26, 0.18);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            color: var(--dark);
+            background: var(--white);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--primary);
+            color: var(--white);
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* HEADER */
+
+        header {
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(139, 26, 26, 0.06);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
 
-<meta name="description" content="MultiPay es una plataforma digital que desarrolla soluciones tecnológicas para servicios digitales. Conoce nuestra propuesta y ponte en contacto con nuestro equipo.">
-<meta name="robots" content="index, follow">
-
-<!-- Open Graph -->
-<meta property="og:title" content="MultiPay | Plataforma digital">
-<meta property="og:description" content="Conoce la propuesta digital de MultiPay y nuestras soluciones tecnológicas.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://TU-DOMINIO-REAL.com/">
-<meta property="og:image" content="https://TU-DOMINIO-REAL.com/img/og-image.jpg">
-
-<link rel="canonical" href="https://TU-DOMINIO-REAL.com/">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<!-- Google tag -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18340812821"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'AW-18340812821');
-</script>
-
-<style>
-    :root {
-        --primary: #6C63FF;
-        --primary-light: #8B83FF;
-        --secondary: #00C9A7;
-        --secondary-light: #66E6CC;
-        --dark: #2D2B4E;
-        --white: #ffffff;
-        --border: #E2E0F0;
-        --text-light: #6B6985;
-        --background: #fafaff;
-        --shadow: 0 4px 20px rgba(108, 99, 255, 0.10);
-        --shadow-hover: 0 8px 30px rgba(108, 99, 255, 0.18);
-    }
-
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    html {
-        scroll-behavior: smooth;
-    }
-
-    body {
-        font-family: 'Inter', Arial, sans-serif;
-        color: var(--dark);
-        background: var(--white);
-        line-height: 1.6;
-    }
-
-    a {
-        text-decoration: none;
-        color: inherit;
-    }
-
-    .container {
-        width: min(1120px, 92%);
-        margin: auto;
-    }
-
-    .skip-link {
-        position: absolute;
-        top: -100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: var(--primary);
-        color: var(--white);
-        padding: 12px 24px;
-        border-radius: 0 0 8px 8px;
-        z-index: 10000;
-        font-weight: 600;
-    }
-
-    .skip-link:focus {
-        top: 0;
-    }
-
-    /* HEADER */
-
-    header {
-        background: var(--white);
-        border-bottom: 1px solid var(--border);
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
-    }
-
-    .navbar {
-        min-height: 76px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 30px;
-    }
-
-    .logo {
-        font-size: 1.8rem;
-        font-weight: 900;
-        color: var(--primary);
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .logo span {
-        color: var(--secondary);
-    }
-
-    .logo-icon {
-        width: 38px;
-        height: 38px;
-        background: var(--primary);
-        color: var(--white);
-        border-radius: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-    }
-
-    nav {
-        display: flex;
-        gap: 30px;
-        align-items: center;
-    }
-
-    nav a {
-        color: var(--dark);
-        font-size: 0.95rem;
-        font-weight: 600;
-        transition: color 0.3s ease;
-    }
-
-    nav a:hover {
-        color: var(--secondary);
-    }
-
-    .nav-cta {
-        background: var(--primary);
-        color: var(--white) !important;
-        padding: 8px 20px;
-        border-radius: 8px;
-    }
-
-    .nav-cta:hover {
-        background: var(--primary-light);
-    }
-
-    /* HERO */
-
-    .hero {
-        background: var(--white);
-        padding: 100px 0 80px;
-        border-bottom: 1px solid var(--border);
-    }
-
-    .hero-content {
-        max-width: 800px;
-    }
-
-    .hero-badge {
-        display: inline-block;
-        background: #f0efff;
-        color: var(--primary);
-        padding: 8px 20px;
-        border-radius: 50px;
-        font-size: 0.85rem;
-        font-weight: 600;
-        margin-bottom: 25px;
-    }
-
-    .hero-badge i {
-        margin-right: 8px;
-    }
-
-    .hero h1 {
-        font-size: clamp(2.8rem, 6vw, 4.8rem);
-        line-height: 1.08;
-        margin-bottom: 25px;
-        font-weight: 900;
-        letter-spacing: -1px;
-    }
-
-    .hero h1 .highlight {
-        color: var(--secondary);
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        max-width: 700px;
-        color: var(--text-light);
-        margin-bottom: 40px;
-        line-height: 1.8;
-    }
-
-    .hero-buttons {
-        display: flex;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .button {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 16px 34px;
-        border-radius: 10px;
-        font-weight: 700;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
-        font-size: 1rem;
-    }
-
-    .button-primary {
-        background: var(--primary);
-        color: var(--white);
-    }
-
-    .button-primary:hover {
-        background: var(--primary-light);
-        transform: translateY(-2px);
-        box-shadow: var(--shadow);
-    }
-
-    .button-secondary {
-        background: var(--white);
-        color: var(--primary);
-        border: 2px solid var(--border);
-    }
-
-    .button-secondary:hover {
-        border-color: var(--primary);
-        transform: translateY(-2px);
-    }
-
-    .hero-stats {
-        display: flex;
-        gap: 50px;
-        margin-top: 50px;
-        padding-top: 40px;
-        border-top: 1px solid var(--border);
-        flex-wrap: wrap;
-    }
-
-    .stat {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .stat-number {
-        font-size: 1.5rem;
-        font-weight: 800;
-        color: var(--primary);
-    }
-
-    .stat-label {
-        font-size: 0.9rem;
-        color: var(--text-light);
-    }
-
-    /* SECTIONS */
-
-    section {
-        padding: 80px 0;
-    }
-
-    .section-header {
-        max-width: 750px;
-        margin-bottom: 50px;
-    }
-
-    .section-tag {
-        display: inline-block;
-        background: #f0efff;
-        color: var(--primary);
-        padding: 4px 16px;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 15px;
-    }
-
-    .section-header h2 {
-        color: var(--dark);
-        font-size: 2.6rem;
-        margin-bottom: 18px;
-        font-weight: 800;
-        line-height: 1.2;
-    }
-
-    .section-header h2 span {
-        color: var(--secondary);
-    }
-
-    .section-header p {
-        color: var(--text-light);
-        font-size: 1.1rem;
-        line-height: 1.8;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .about-box {
-        background: var(--white);
-        padding: 40px;
-        border-radius: 16px;
-        border: 1px solid var(--border);
-        transition: all 0.3s ease;
-    }
-
-    .about-box:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--shadow-hover);
-    }
-
-    .icon-wrapper {
-        width: 56px;
-        height: 56px;
-        background: #f0efff;
-        border-radius: 12px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 18px;
-        font-size: 1.6rem;
-        color: var(--primary);
-    }
-
-    .about-box h3 {
-        margin-bottom: 12px;
-        font-size: 1.4rem;
-    }
-
-    .about-box p {
-        color: var(--text-light);
-        line-height: 1.8;
-    }
-
-    /* SOLUTIONS */
-
-    .solution-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-
-    .card {
-        padding: 40px 32px;
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        background: var(--white);
-        transition: all 0.3s ease;
-    }
-
-    .card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-hover);
-        border-color: var(--primary);
-    }
-
-    .card-icon {
-        width: 64px;
-        height: 64px;
-        border-radius: 14px;
-        background: #f0efff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 22px;
-        font-size: 1.8rem;
-        color: var(--primary);
-    }
-
-    .card h3 {
-        margin-bottom: 12px;
-        font-size: 1.3rem;
-    }
-
-    .card p {
-        color: var(--text-light);
-        line-height: 1.8;
-    }
-
-    .cta-center {
-        text-align: center;
-        margin-top: 40px;
-    }
-
-    /* BENEFITS */
-
-    .benefits-list {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-    }
-
-    .benefit {
-        display: flex;
-        gap: 20px;
-        padding: 25px 30px;
-        background: var(--white);
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        align-items: flex-start;
-    }
-
-    .icon-check {
-        min-width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        background: var(--secondary);
-        color: var(--white);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .benefit p {
-        font-weight: 500;
-        line-height: 1.6;
-    }
-
-    /* CONTACT */
-
-    .contact {
-        background: var(--background);
-        border-top: 1px solid var(--border);
-    }
-
-    .contact-wrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 40px;
-        align-items: start;
-    }
-
-    .contact-box {
-        background: var(--white);
-        padding: 40px;
-        border-radius: 16px;
-        border: 1px solid var(--border);
-        box-shadow: var(--shadow);
-    }
-
-    .contact-box h3 {
-        margin-bottom: 28px;
-        font-size: 1.5rem;
-    }
-
-    .contact-item {
-        margin-bottom: 22px;
-        display: flex;
-        align-items: flex-start;
-        gap: 15px;
-    }
-
-    .contact-icon {
-        min-width: 40px;
-        height: 40px;
-        border-radius: 10px;
-        background: #f0efff;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: var(--primary);
-    }
-
-    .contact-content strong {
-        display: block;
-        font-size: 0.85rem;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-
-    .contact-content span {
-        color: var(--text-light);
-    }
-
-    .contact-form .form-group {
-        margin-bottom: 20px;
-    }
-
-    .contact-form label {
-        display: block;
-        margin-bottom: 6px;
-        font-weight: 600;
-        font-size: 0.9rem;
-    }
-
-    .contact-form input,
-    .contact-form textarea,
-    .contact-form select {
-        width: 100%;
-        padding: 14px 18px;
-        border: 2px solid var(--border);
-        border-radius: 10px;
-        font-family: inherit;
-        font-size: 1rem;
-        background: var(--white);
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus,
-    .contact-form select:focus {
-        outline: none;
-        border-color: var(--primary);
-    }
-
-    .contact-form textarea {
-        min-height: 130px;
-        resize: vertical;
-    }
-
-    .submit-btn {
-        width: 100%;
-        padding: 16px;
-        background: var(--primary);
-        color: var(--white);
-        border: none;
-        border-radius: 10px;
-        font-weight: 700;
-        font-size: 1.05rem;
-        cursor: pointer;
-    }
-
-    .submit-btn:hover {
-        background: var(--primary-light);
-    }
-
-    .form-message {
-        display: none;
-        margin-top: 15px;
-        padding: 12px;
-        border-radius: 8px;
-        background: #e9f9f5;
-        color: #147a67;
-        font-size: 0.95rem;
-    }
-
-    /* LEGAL */
-
-    .legal {
-        background: var(--white);
-    }
-
-    .legal-grid {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
-    }
-
-    .legal article {
-        border: 1px solid var(--border);
-        padding: 35px;
-        border-radius: 14px;
-    }
-
-    .legal-icon {
-        font-size: 2rem;
-        color: var(--primary);
-        margin-bottom: 15px;
-    }
-
-    .legal article h3 {
-        margin-bottom: 15px;
-        font-size: 1.3rem;
-    }
-
-    .legal article p {
-        color: var(--text-light);
-        margin-bottom: 14px;
-        line-height: 1.8;
-        font-size: 0.95rem;
-    }
-
-    /* FOOTER */
-
-    footer {
-        background: var(--dark);
-        color: #dbe5ea;
-        padding: 60px 0 30px;
-    }
-
-    .footer-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 50px;
-    }
-
-    .footer-brand .logo {
-        color: var(--white);
-    }
-
-    .footer-brand p {
-        color: #b0c8d4;
-        line-height: 1.8;
-        margin-top: 15px;
-        max-width: 420px;
-    }
-
-    .footer-links {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-    }
-
-    .footer-link-item h4 {
-        color: var(--white);
-        margin-bottom: 16px;
-    }
-
-    .footer-link-item a {
-        display: block;
-        color: #b0c8d4;
-        padding: 4px 0;
-    }
-
-    .footer-link-item a:hover {
-        color: var(--secondary-light);
-    }
-
-    .footer-bottom {
-        border-top: 1px solid rgba(255,255,255,0.08);
-        margin-top: 45px;
-        padding-top: 25px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .footer-bottom p {
-        color: #8aa8b8;
-        font-size: 0.9rem;
-    }
-
-    /* RESPONSIVE */
-
-    @media (max-width: 900px) {
         nav {
-            display: none;
+            display: flex;
+            gap: 30px;
+            align-items: center;
         }
 
-        .about-grid,
-        .solution-grid,
-        .benefits-list,
-        .contact-wrapper,
-        .legal-grid,
-        .footer-content {
-            grid-template-columns: 1fr;
+        nav a {
+            color: var(--dark);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
         }
 
-        .footer-links {
-            grid-template-columns: 1fr 1fr;
+        nav a:hover {
+            color: var(--secondary);
         }
-    }
 
-    @media (max-width: 600px) {
+        .nav-cta {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 8px 20px;
+            border-radius: 8px;
+        }
+
+        .nav-cta:hover {
+            background: var(--primary-light);
+        }
+
+        /* HERO */
+
         .hero {
-            padding: 60px 0 50px;
+            background: var(--white);
+            padding: 100px 0 80px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #F5E8E8;
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero-badge i {
+            margin-right: 8px;
         }
 
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.08;
+            margin-bottom: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: var(--dark);
+        }
+
+        .hero h1 .highlight {
+            color: var(--secondary);
         }
 
         .hero p {
-            font-size: 1rem;
-        }
-
-        section {
-            padding: 55px 0;
-        }
-
-        .section-header h2 {
-            font-size: 2rem;
+            font-size: 1.2rem;
+            max-width: 700px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            line-height: 1.8;
         }
 
         .hero-buttons {
-            flex-direction: column;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .button {
-            width: 100%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 34px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
 
-        .about-box,
-        .card,
-        .contact-box,
+        .button-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .button-primary:hover {
+            background: var(--primary-light);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .button-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--border);
+        }
+
+        .button-secondary:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            max-width: 750px;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: #F5E8E8;
+            color: var(--primary);
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            color: var(--dark);
+            font-size: 2.6rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-header h2 span {
+            color: var(--secondary);
+        }
+
+        .section-header p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .about-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .about-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: #F5E8E8;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+            color: var(--primary);
+        }
+
+        .about-box h3 {
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            color: var(--dark);
+        }
+
+        .about-box p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* SOLUTIONS */
+
+        .solution-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            padding: 40px 32px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            background: #F5E8E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            color: var(--dark);
+        }
+
+        .card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* BENEFITS */
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 20px;
+            padding: 25px 30px;
+            background: var(--white);
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            align-items: flex-start;
+        }
+
+        .icon-check {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--secondary);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit p {
+            font-weight: 500;
+            line-height: 1.6;
+            color: var(--dark);
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: var(--background);
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-box {
+            background: var(--white);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-box h3 {
+            margin-bottom: 28px;
+            font-size: 1.5rem;
+            color: var(--dark);
+        }
+
+        .contact-item {
+            margin-bottom: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #F5E8E8;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+        }
+
+        .contact-content strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--dark);
+        }
+
+        .contact-content span {
+            color: var(--text-light);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--dark);
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--white);
+            color: var(--dark);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-light);
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            background: #F5E8E8;
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        /* LEGAL */
+
+        .legal {
+            background: var(--white);
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
         .legal article {
-            padding: 25px;
+            border: 1px solid var(--border);
+            padding: 35px;
+            border-radius: 14px;
+        }
+
+        .legal-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .legal article h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--dark);
+        }
+
+        .legal article p {
+            color: var(--text-light);
+            margin-bottom: 14px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #2D1B1B;
+            color: #D4B0B0;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand .logo {
+            color: #E8C8C8;
+        }
+
+        .footer-brand .logo span {
+            color: #C47878;
+        }
+
+        .footer-brand .logo .logo-icon {
+            background: var(--primary);
+        }
+
+        .footer-brand p {
+            color: #C4A0A0;
+            line-height: 1.8;
+            margin-top: 15px;
+            max-width: 420px;
         }
 
         .footer-links {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
-    }
-</style>
-```
+
+        .footer-link-item h4 {
+            color: #E8C8C8;
+            margin-bottom: 16px;
+        }
+
+        .footer-link-item a {
+            display: block;
+            color: #C4A0A0;
+            padding: 4px 0;
+        }
+
+        .footer-link-item a:hover {
+            color: #E8C8C8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 45px;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            color: #B08888;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .about-grid,
+            .solution-grid,
+            .benefits-list,
+            .contact-wrapper,
+            .legal-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .about-box,
+            .card,
+            .contact-box,
+            .legal article {
+                padding: 25px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 
 </head>
 
 <body>
 
-```
-<a class="skip-link" href="#inicio">Saltar al contenido principal</a>
+    <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
 
-<header>
-    <div class="container navbar">
+    <header>
+        <div class="container navbar">
 
-        <a href="#inicio" class="logo" aria-label="MultiPay - Inicio">
-            <span class="logo-icon">
-                <i class="fas fa-layer-group"></i>
-            </span>
-            Multi<span>Pay</span>
-        </a>
-
-        <nav aria-label="Navegación principal">
-            <a href="#nosotros">Nosotros</a>
-            <a href="#soluciones">Soluciones</a>
-            <a href="#beneficios">Beneficios</a>
-            <a href="#contacto" class="nav-cta">Contacto</a>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-
-    <!-- HERO -->
-
-    <section class="hero" id="inicio">
-
-        <div class="container hero-content">
-
-            <div class="hero-badge">
-                <i class="fas fa-globe"></i>
-                Plataforma digital
-            </div>
-
-            <h1>
-                Tecnología para un entorno digital más
-                <span class="highlight">conectado</span>
-            </h1>
-
-            <p>
-                MultiPay es una plataforma digital orientada al desarrollo
-                de soluciones tecnológicas para servicios digitales.
-                Conoce nuestra propuesta y la evolución de nuestro proyecto.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#soluciones" class="button button-primary">
-                    <i class="fas fa-arrow-right"></i>
-                    Conocer la propuesta
-                </a>
-
-                <a href="#contacto" class="button button-secondary">
-                    <i class="fas fa-envelope"></i>
-                    Contactar
-                </a>
-
-            </div>
-
-            <div class="hero-stats">
-
-                <div class="stat">
-                    <span class="stat-number">Digital</span>
-                    <span class="stat-label">
-                        Plataforma orientada a servicios digitales
-                    </span>
-                </div>
-
-                <div class="stat">
-                    <span class="stat-number">Online</span>
-                    <span class="stat-label">
-                        Información y atención a través de canales digitales
-                    </span>
-                </div>
-
-                <div class="stat">
-                    <span class="stat-number">En evolución</span>
-                    <span class="stat-label">
-                        Desarrollo continuo de la propuesta
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- NOSOTROS -->
-
-    <section id="nosotros">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">
-                    Sobre MultiPay
+            <a href="#inicio" class="logo" aria-label="MultiPay - Inicio">
+                <span class="logo-icon">
+                    <i class="fas fa-layer-group"></i>
                 </span>
+                Multi<span>Pay</span>
+            </a>
 
-                <h2>
-                    Una propuesta digital enfocada en la
-                    <span>tecnología</span>
-                </h2>
-
-                <p>
-                    MultiPay es un proyecto digital orientado a explorar
-                    y desarrollar soluciones tecnológicas para servicios
-                    digitales. Nuestro objetivo es crear herramientas
-                    claras, funcionales y fáciles de utilizar.
-                </p>
-
-            </div>
-
-            <div class="about-grid">
-
-                <div class="about-box">
-
-                    <div class="icon-wrapper">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-
-                    <h3>
-                        Nuestra propuesta
-                    </h3>
-
-                    <p>
-                        Trabajamos en el desarrollo de una propuesta digital
-                        enfocada en conectar ideas, herramientas y servicios
-                        tecnológicos dentro de una experiencia sencilla.
-                    </p>
-
-                </div>
-
-                <div class="about-box">
-
-                    <div class="icon-wrapper">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-
-                    <h3>
-                        Desarrollo continuo
-                    </h3>
-
-                    <p>
-                        La plataforma se encuentra en evolución. La información
-                        publicada se actualiza conforme se desarrollan nuevas
-                        funcionalidades y contenidos.
-                    </p>
-
-                </div>
-
-            </div>
+            <nav aria-label="Navegación principal">
+                <a href="#nosotros">Nosotros</a>
+                <a href="#soluciones">Soluciones</a>
+                <a href="#beneficios">Beneficios</a>
+                <a href="#contacto" class="nav-cta">Contacto</a>
+            </nav>
 
         </div>
+    </header>
 
-    </section>
+    <main>
 
-    <!-- SOLUCIONES -->
+        <!-- HERO -->
 
-    <section id="soluciones">
+        <section class="hero" id="inicio">
 
-        <div class="container">
+            <div class="container hero-content">
 
-            <div class="section-header">
+                <div class="hero-badge">
+                    <i class="fas fa-globe"></i>
+                    Plataforma digital
+                </div>
 
-                <span class="section-tag">
-                    Soluciones digitales
-                </span>
-
-                <h2>
-                    Una plataforma pensada para
-                    <span>servicios digitales</span>
-                </h2>
+                <h1>
+                    Tecnología para un entorno digital más
+                    <span class="highlight">conectado</span>
+                </h1>
 
                 <p>
-                    Conoce las áreas principales de nuestra propuesta
-                    tecnológica.
-                </p>
-
-            </div>
-
-            <div class="solution-grid">
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-
-                    <h3>
-                        Desarrollo digital
-                    </h3>
-
-                    <p>
-                        Exploramos herramientas y soluciones orientadas
-                        a mejorar la experiencia de los usuarios en
-                        entornos digitales.
-                    </p>
-
-                </div>
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-
-                    <h3>
-                        Integración tecnológica
-                    </h3>
-
-                    <p>
-                        Trabajamos en conceptos de integración entre
-                        diferentes servicios y herramientas digitales.
-                    </p>
-
-                </div>
-
-                <div class="card">
-
-                    <div class="card-icon">
-                        <i class="fas fa-cloud"></i>
-                    </div>
-
-                    <h3>
-                        Experiencia online
-                    </h3>
-
-                    <p>
-                        Diseñamos una experiencia digital clara y accesible
-                        para facilitar el acceso a la información.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- BENEFICIOS -->
-
-    <section id="beneficios">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">
-                    Nuestra forma de trabajar
-                </span>
-
-                <h2>
-                    Una propuesta basada en la
-                    <span>claridad</span>
-                </h2>
-
-                <p>
-                    Estos son los principios que orientan la experiencia
-                    de la plataforma.
-                </p>
-
-            </div>
-
-            <div class="benefits-list">
-
-                <div class="benefit">
-                    <span class="icon-check">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <p>
-                        Información clara sobre la propuesta digital.
-                    </p>
-                </div>
-
-                <div class="benefit">
-                    <span class="icon-check">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <p>
-                        Comunicación directa a través de canales digitales.
-                    </p>
-                </div>
-
-                <div class="benefit">
-                    <span class="icon-check">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <p>
-                        Desarrollo progresivo de la plataforma.
-                    </p>
-                </div>
-
-                <div class="benefit">
-                    <span class="icon-check">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <p>
-                        Experiencia de navegación sencilla.
-                    </p>
-                </div>
-
-                <div class="benefit">
-                    <span class="icon-check">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <p>
-                        Contenido enfocado en soluciones digitales.
-                    </p>
-                </div>
-
-                <div class="benefit">
-                    <span class="icon-check">
-                        <i class="fas fa-check"></i>
-                    </span>
-                    <p>
-                        Actualización de la información publicada.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- CONTACTO -->
-
-    <section class="contact" id="contacto">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">
-                    Contacto
-                </span>
-
-                <h2>
-                    ¿Quieres conocer más sobre
-                    <span>MultiPay?</span>
-                </h2>
-
-                <p>
-                    Escríbenos a través del formulario y podremos recibir
-                    tu consulta sobre nuestra propuesta digital.
-                </p>
-
-            </div>
-
-            <div class="contact-wrapper">
-
-                <div class="contact-box">
-
-                    <h3>
-                        <i class="fas fa-globe" style="color: var(--primary);"></i>
-                        Información digital
-                    </h3>
-
-                    <div class="contact-item">
-
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-
-                        <div class="contact-content">
-
-                            <strong>
-                                Correo electrónico
-                            </strong>
-
-                            <span>
-                                TU-CORREO-REAL@dominio.com
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="contact-item">
-
-                        <div class="contact-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-
-                        <div class="contact-content">
-
-                            <strong>
-                                Modalidad
-                            </strong>
-
-                            <span>
-                                Operación y atención digital
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <div class="contact-item">
-
-                        <div class="contact-icon">
-                            <i class="fas fa-clock"></i>
-                        </div>
-
-                        <div class="contact-content">
-
-                            <strong>
-                                Disponibilidad
-                            </strong>
-
-                            <span>
-                                Las consultas son recibidas a través del sitio web.
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                    <hr style="border: none; border-top: 1px solid var(--border); margin: 25px 0;">
-
-                    <p style="color: var(--text-light); line-height: 1.8;">
-
-                        MultiPay es una propuesta digital en desarrollo.
-                        La información publicada en este sitio tiene carácter
-                        informativo y describe el alcance actual de la plataforma.
-
-                    </p>
-
-                </div>
-
-                <div class="contact-box">
-
-                    <h3>
-                        <i class="fas fa-paper-plane" style="color: var(--primary);"></i>
-                        Enviar una consulta
-                    </h3>
-
-                    <form class="contact-form" id="contactForm">
-
-                        <div class="form-group">
-
-                            <label for="name">
-                                Nombre
-                            </label>
-
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                autocomplete="name"
-                                required
-                            >
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="email">
-                                Correo electrónico
-                            </label>
-
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                autocomplete="email"
-                                required
-                            >
-
-                        </div>
-
-                        <div class="form-group">
-
-                            <label for="message">
-                                Consulta
-                            </label>
-
-                            <textarea
-                                id="message"
-                                name="message"
-                                required
-                            ></textarea>
-
-                        </div>
-
-                        <button type="submit" class="submit-btn">
-
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar consulta
-
-                        </button>
-
-                        <div class="form-message" id="formMessage">
-
-                            Gracias. Tu consulta fue preparada correctamente.
-                            Para recibirla realmente, conecta este formulario
-                            a un servicio de formularios o a tu propio backend.
-
-                        </div>
-
-                    </form>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- INFORMACIÓN LEGAL -->
-
-    <section class="legal" id="legal">
-
-        <div class="container">
-
-            <div class="section-header">
-
-                <span class="section-tag">
-                    Información
-                </span>
-
-                <h2>
-                    Información del
-                    <span>sitio</span>
-                </h2>
-
-                <p>
-                    Información general sobre el uso de esta plataforma.
-                </p>
-
-            </div>
-
-            <div class="legal-grid">
-
-                <article>
-
-                    <div class="legal-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-
-                    <h3>
-                        Privacidad
-                    </h3>
-
-                    <p>
-                        Los datos enviados mediante el formulario deben
-                        utilizarse únicamente para atender la consulta
-                        correspondiente.
-                    </p>
-
-                    <p>
-                        No envíes información financiera, contraseñas,
-                        códigos de seguridad ni datos sensibles a través
-                        de este formulario.
-                    </p>
-
-                </article>
-
-                <article>
-
-                    <div class="legal-icon">
-                        <i class="fas fa-file-alt"></i>
-                    </div>
-
-                    <h3>
-                        Uso del sitio
-                    </h3>
-
-                    <p>
-                        El contenido de este sitio tiene carácter informativo
-                        y describe la propuesta digital disponible.
-                    </p>
-
-                    <p>
-                        La información puede actualizarse a medida que
-                        evoluciona el proyecto.
-                    </p>
-
-                </article>
-
-                <article>
-
-                    <div class="legal-icon">
-                        <i class="fas fa-info-circle"></i>
-                    </div>
-
-                    <h3>
-                        Transparencia
-                    </h3>
-
-                    <p>
-                        MultiPay se presenta como una plataforma digital.
-                        No se realizan afirmaciones sobre licencias,
-                        certificaciones, clientes, resultados o asociaciones
-                        que no puedan demostrarse.
-                    </p>
-
-                    <p>
-                        Este sitio no debe interpretarse como una entidad
-                        bancaria, financiera o de inversión.
-                    </p>
-
-                </article>
-
-            </div>
-
-        </div>
-
-    </section>
-
-</main>
-
-<!-- FOOTER -->
-
-<footer>
-
-    <div class="container">
-
-        <div class="footer-content">
-
-            <div class="footer-brand">
-
-                <a href="#inicio" class="logo">
-
-                    <span class="logo-icon">
-                        <i class="fas fa-layer-group"></i>
-                    </span>
-
-                    Multi<span>Pay</span>
-
-                </a>
-
-                <p>
-                    MultiPay es una propuesta digital orientada al desarrollo
+                    MultiPay es una plataforma digital orientada al desarrollo
                     de soluciones tecnológicas para servicios digitales.
+                    Conoce nuestra propuesta y la evolución de nuestro proyecto.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#soluciones" class="button button-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        Conocer la propuesta
+                    </a>
+
+                    <a href="#contacto" class="button button-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contactar
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <span class="stat-number">Digital</span>
+                        <span class="stat-label">
+                            Plataforma orientada a servicios digitales
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">Online</span>
+                        <span class="stat-label">
+                            Información y atención a través de canales digitales
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">En evolución</span>
+                        <span class="stat-label">
+                            Desarrollo continuo de la propuesta
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- NOSOTROS -->
+
+        <section id="nosotros">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Sobre MultiPay
+                    </span>
+
+                    <h2>
+                        Una propuesta digital enfocada en la
+                        <span>tecnología</span>
+                    </h2>
+
+                    <p>
+                        MultiPay es un proyecto digital orientado a explorar
+                        y desarrollar soluciones tecnológicas para servicios
+                        digitales. Nuestro objetivo es crear herramientas
+                        claras, funcionales y fáciles de utilizar.
+                    </p>
+
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-box">
+
+                        <div class="icon-wrapper">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+
+                        <h3>
+                            Nuestra propuesta
+                        </h3>
+
+                        <p>
+                            Trabajamos en el desarrollo de una propuesta digital
+                            enfocada en conectar ideas, herramientas y servicios
+                            tecnológicos dentro de una experiencia sencilla.
+                        </p>
+
+                    </div>
+
+                    <div class="about-box">
+
+                        <div class="icon-wrapper">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+
+                        <h3>
+                            Desarrollo continuo
+                        </h3>
+
+                        <p>
+                            La plataforma se encuentra en evolución. La información
+                            publicada se actualiza conforme se desarrollan nuevas
+                            funcionalidades y contenidos.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- SOLUCIONES -->
+
+        <section id="soluciones">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Soluciones digitales
+                    </span>
+
+                    <h2>
+                        Una plataforma pensada para
+                        <span>servicios digitales</span>
+                    </h2>
+
+                    <p>
+                        Conoce las áreas principales de nuestra propuesta
+                        tecnológica.
+                    </p>
+
+                </div>
+
+                <div class="solution-grid">
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+
+                        <h3>
+                            Desarrollo digital
+                        </h3>
+
+                        <p>
+                            Exploramos herramientas y soluciones orientadas
+                            a mejorar la experiencia de los usuarios en
+                            entornos digitales.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+
+                        <h3>
+                            Integración tecnológica
+                        </h3>
+
+                        <p>
+                            Trabajamos en conceptos de integración entre
+                            diferentes servicios y herramientas digitales.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+
+                        <h3>
+                            Experiencia online
+                        </h3>
+
+                        <p>
+                            Diseñamos una experiencia digital clara y accesible
+                            para facilitar el acceso a la información.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BENEFICIOS -->
+
+        <section id="beneficios">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Nuestra forma de trabajar
+                    </span>
+
+                    <h2>
+                        Una propuesta basada en la
+                        <span>claridad</span>
+                    </h2>
+
+                    <p>
+                        Estos son los principios que orientan la experiencia
+                        de la plataforma.
+                    </p>
+
+                </div>
+
+                <div class="benefits-list">
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Información clara sobre la propuesta digital.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Comunicación directa a través de canales digitales.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Desarrollo progresivo de la plataforma.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Experiencia de navegación sencilla.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Contenido enfocado en soluciones digitales.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Actualización de la información publicada.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACTO -->
+
+        <section class="contact" id="contacto">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Contacto
+                    </span>
+
+                    <h2>
+                        ¿Quieres conocer más sobre
+                        <span>MultiPay?</span>
+                    </h2>
+
+                    <p>
+                        Escríbenos a través del formulario y podremos recibir
+                        tu consulta sobre nuestra propuesta digital.
+                    </p>
+
+                </div>
+
+                <div class="contact-wrapper">
+
+                    <div class="contact-box">
+
+                        <h3>
+                            <i class="fas fa-globe" style="color: var(--primary);"></i>
+                            Información digital
+                        </h3>
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <div class="contact-content">
+
+                                <strong>
+                                    Correo electrónico
+                                </strong>
+
+                                <span>
+                                    TU-CORREO-REAL@dominio.com
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+
+                            <div class="contact-content">
+
+                                <strong>
+                                    Modalidad
+                                </strong>
+
+                                <span>
+                                    Operación y atención digital
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+
+                            <div class="contact-content">
+
+                                <strong>
+                                    Disponibilidad
+                                </strong>
+
+                                <span>
+                                    Las consultas son recibidas a través del sitio web.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <hr style="border: none; border-top: 1px solid var(--border); margin: 25px 0;">
+
+                        <p style="color: var(--text-light); line-height: 1.8;">
+
+                            MultiPay es una propuesta digital en desarrollo.
+                            La información publicada en este sitio tiene carácter
+                            informativo y describe el alcance actual de la plataforma.
+
+                        </p>
+
+                    </div>
+
+                    <div class="contact-box">
+
+                        <h3>
+                            <i class="fas fa-paper-plane" style="color: var(--primary);"></i>
+                            Enviar una consulta
+                        </h3>
+
+                        <form class="contact-form" id="contactForm">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Nombre
+                                </label>
+
+                                <input type="text" id="name" name="name" autocomplete="name" required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Correo electrónico
+                                </label>
+
+                                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    Consulta
+                                </label>
+
+                                <textarea id="message" name="message" required></textarea>
+
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+
+                                <i class="fas fa-paper-plane"></i>
+                                Enviar consulta
+
+                            </button>
+
+                            <div class="form-message" id="formMessage">
+
+                                Gracias. Tu consulta fue preparada correctamente.
+                                Para recibirla realmente, conecta este formulario
+                                a un servicio de formularios o a tu propio backend.
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- INFORMACIÓN LEGAL -->
+
+        <section class="legal" id="legal">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Información
+                    </span>
+
+                    <h2>
+                        Información del
+                        <span>sitio</span>
+                    </h2>
+
+                    <p>
+                        Información general sobre el uso de esta plataforma.
+                    </p>
+
+                </div>
+
+                <div class="legal-grid">
+
+                    <article>
+
+                        <div class="legal-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+
+                        <h3>
+                            Privacidad
+                        </h3>
+
+                        <p>
+                            Los datos enviados mediante el formulario deben
+                            utilizarse únicamente para atender la consulta
+                            correspondiente.
+                        </p>
+
+                        <p>
+                            No envíes información financiera, contraseñas,
+                            códigos de seguridad ni datos sensibles a través
+                            de este formulario.
+                        </p>
+
+                    </article>
+
+                    <article>
+
+                        <div class="legal-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+
+                        <h3>
+                            Uso del sitio
+                        </h3>
+
+                        <p>
+                            El contenido de este sitio tiene carácter informativo
+                            y describe la propuesta digital disponible.
+                        </p>
+
+                        <p>
+                            La información puede actualizarse a medida que
+                            evoluciona el proyecto.
+                        </p>
+
+                    </article>
+
+                    <article>
+
+                        <div class="legal-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+
+                        <h3>
+                            Transparencia
+                        </h3>
+
+                        <p>
+                            MultiPay se presenta como una plataforma digital.
+                            No se realizan afirmaciones sobre licencias,
+                            certificaciones, clientes, resultados o asociaciones
+                            que no puedan demostrarse.
+                        </p>
+
+                        <p>
+                            Este sitio no debe interpretarse como una entidad
+                            bancaria, financiera o de inversión.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="#inicio" class="logo">
+
+                        <span class="logo-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </span>
+
+                        Multi<span>Pay</span>
+
+                    </a>
+
+                    <p>
+                        MultiPay es una propuesta digital orientada al desarrollo
+                        de soluciones tecnológicas para servicios digitales.
+                    </p>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <div class="footer-link-item">
+
+                        <h4>
+                            Navegación
+                        </h4>
+
+                        <a href="#nosotros">
+                            Nosotros
+                        </a>
+
+                        <a href="#soluciones">
+                            Soluciones
+                        </a>
+
+                        <a href="#beneficios">
+                            Beneficios
+                        </a>
+
+                        <a href="#contacto">
+                            Contacto
+                        </a>
+
+                    </div>
+
+                    <div class="footer-link-item">
+
+                        <h4>
+                            Información
+                        </h4>
+
+                        <a href="#legal">
+                            Privacidad
+                        </a>
+
+                        <a href="#legal">
+                            Uso del sitio
+                        </a>
+
+                        <a href="#legal">
+                            Transparencia
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 MultiPay. Todos los derechos reservados.
+                </p>
+
+                <p>
+                    Plataforma digital en desarrollo.
                 </p>
 
             </div>
 
-            <div class="footer-links">
-
-                <div class="footer-link-item">
-
-                    <h4>
-                        Navegación
-                    </h4>
-
-                    <a href="#nosotros">
-                        Nosotros
-                    </a>
-
-                    <a href="#soluciones">
-                        Soluciones
-                    </a>
-
-                    <a href="#beneficios">
-                        Beneficios
-                    </a>
-
-                    <a href="#contacto">
-                        Contacto
-                    </a>
-
-                </div>
-
-                <div class="footer-link-item">
-
-                    <h4>
-                        Información
-                    </h4>
-
-                    <a href="#legal">
-                        Privacidad
-                    </a>
-
-                    <a href="#legal">
-                        Uso del sitio
-                    </a>
-
-                    <a href="#legal">
-                        Transparencia
-                    </a>
-
-                </div>
-
-            </div>
-
         </div>
 
-        <div class="footer-bottom">
+    </footer>
 
-            <p>
-                © 2026 MultiPay. Todos los derechos reservados.
-            </p>
+    <script>
 
-            <p>
-                Plataforma digital en desarrollo.
-            </p>
+        // Desplazamiento suave
 
-        </div>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    </div>
+            anchor.addEventListener('click', function(event) {
 
-</footer>
+                const targetId = this.getAttribute('href');
 
-<script>
+                if (targetId === '#') return;
 
-    // Desplazamiento suave
+                const target = document.querySelector(targetId);
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                if (target) {
 
-        anchor.addEventListener('click', function(event) {
+                    event.preventDefault();
 
-            const targetId = this.getAttribute('href');
+                    const headerOffset = 80;
 
-            if (targetId === '#') return;
+                    const elementPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        headerOffset;
 
-            const target = document.querySelector(targetId);
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
 
-            if (target) {
+                }
 
-                event.preventDefault();
-
-                const headerOffset = 80;
-
-                const elementPosition =
-                    target.getBoundingClientRect().top +
-                    window.scrollY -
-                    headerOffset;
-
-                window.scrollTo({
-                    top: elementPosition,
-                    behavior: 'smooth'
-                });
-
-            }
+            });
 
         });
 
-    });
+        // Formulario
 
-    // Formulario
+        const contactForm = document.getElementById('contactForm');
 
-    const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
 
-    const formMessage = document.getElementById('formMessage');
+        contactForm.addEventListener('submit', function(event) {
 
-    contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
 
-        event.preventDefault();
+            if (!contactForm.checkValidity()) {
 
-        if (!contactForm.checkValidity()) {
+                contactForm.reportValidity();
 
-            contactForm.reportValidity();
+                return;
 
-            return;
+            }
 
-        }
+            formMessage.style.display = 'block';
 
-        formMessage.style.display = 'block';
+            contactForm.reset();
 
-        contactForm.reset();
+        });
 
-    });
-
-</script>
-```
+    </script>
 
 </body>
 </html>
