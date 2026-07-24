@@ -3,1490 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>MultiDay | Plataforma de Recreación Familiar</title>
-
-    <meta name="description" content="MultiDay es una plataforma informativa sobre recreación familiar. Conoce actividades, ideas y propuestas para el tiempo libre en familia.">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="MultiDay | Plataforma de Recreación Familiar">
-    <meta property="og:description" content="MultiDay es una plataforma informativa sobre recreación familiar. Conoce actividades, ideas y propuestas para el tiempo libre en familia.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://multidaymultiday.vercel.app/">
-    <meta property="og:image" content="https://multidaymultiday.vercel.app/img/og-image.jpg">
-
-    <link rel="canonical" href="https://multidaymultiday.vercel.app/">
-
-    <!-- Google tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18340812821">
-    </script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
-        gtag('config', 'AW-18340812821');
-    </script>
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <title>Cargando...</title>
+    <meta name="robots" content="noindex, nofollow">
     <style>
-        :root {
-            --rojo-suave: #8B1A1A;
-            --rojo-claro: #A05252;
-            --rojo-muy-claro: #C47878;
-            --rojo-texto: #6B1A1A;
-            --rojo-borde: #E8C8C8;
-            --rojo-fondo: #FDF5F5;
-            --blanco: #FFFFFF;
-            --sombra: 0 4px 20px rgba(139, 26, 26, 0.08);
-            --sombra-hover: 0 8px 30px rgba(139, 26, 26, 0.15);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: 'Inter', Arial, sans-serif;
-            color: var(--rojo-texto);
-            background: var(--blanco);
-            line-height: 1.6;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: min(1120px, 92%);
-            margin: auto;
-        }
-
-        .skip-link {
-            position: absolute;
-            top: -100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--rojo-suave);
-            color: var(--blanco);
-            padding: 12px 24px;
-            border-radius: 0 0 8px 8px;
-            z-index: 10000;
-            font-weight: 600;
-        }
-
-        .skip-link:focus {
-            top: 0;
-        }
-
-        /* HEADER */
-        header {
-            background: var(--blanco);
-            border-bottom: 1px solid var(--rojo-borde);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(139, 26, 26, 0.04);
-        }
-
-        .navbar {
-            min-height: 76px;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 30px;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--rojo-suave);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo span {
-            color: var(--rojo-claro);
-        }
-
-        .logo-icon {
-            width: 38px;
-            height: 38px;
-            background: var(--rojo-suave);
-            color: var(--blanco);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 1.2rem;
-        }
-
-        nav {
-            display: flex;
-            gap: 30px;
             align-items: center;
+            min-height: 100vh;
+            background: #ffffff;
+            margin: 0;
+            padding: 20px;
         }
 
-        nav a {
-            color: var(--rojo-texto);
-            font-size: 0.95rem;
-            font-weight: 600;
-            transition: color 0.3s ease;
+        .loader-container {
+            text-align: center;
+            padding: 40px;
         }
 
-        nav a:hover {
-            color: var(--rojo-claro);
+        /* CÍRCULO ROJO CARGANDO */
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #f0d0d0;
+            border-top: 4px solid #8B1A1A;
+            border-right: 4px solid #8B1A1A;
+            border-radius: 50%;
+            animation: spin 0.9s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(139, 26, 26, 0.06);
         }
 
-        .nav-cta {
-            background: var(--rojo-suave);
-            color: var(--blanco) !important;
-            padding: 8px 20px;
-            border-radius: 8px;
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
 
-        .nav-cta:hover {
-            background: var(--rojo-claro);
-        }
-
-        /* HERO */
-        .hero {
-            background: var(--blanco);
-            padding: 100px 0 80px;
-            border-bottom: 1px solid var(--rojo-borde);
-        }
-
-        .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-badge {
-            display: inline-block;
-            background: var(--rojo-fondo);
-            color: var(--rojo-suave);
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-bottom: 25px;
-        }
-
-        .hero-badge i {
-            margin-right: 8px;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.8rem, 6vw, 4.8rem);
-            line-height: 1.08;
-            margin-bottom: 25px;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: var(--rojo-suave);
-        }
-
-        .hero h1 .highlight {
-            color: var(--rojo-claro);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            color: var(--rojo-claro);
-            margin-bottom: 40px;
-            line-height: 1.8;
-        }
-
-        .hero-buttons {
+        /* PUNTOS DE CARGA */
+        .dots {
+            margin-top: 30px;
             display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .button {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
             gap: 10px;
-            padding: 16px 34px;
-            border-radius: 10px;
-            font-weight: 700;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
         }
 
-        .button-primary {
-            background: var(--rojo-suave);
-            color: var(--blanco);
-        }
-
-        .button-primary:hover {
-            background: var(--rojo-claro);
-            transform: translateY(-2px);
-            box-shadow: var(--sombra);
-        }
-
-        .button-secondary {
-            background: var(--blanco);
-            color: var(--rojo-suave);
-            border: 2px solid var(--rojo-borde);
-        }
-
-        .button-secondary:hover {
-            border-color: var(--rojo-suave);
-            transform: translateY(-2px);
-        }
-
-        .hero-stats {
-            display: flex;
-            gap: 50px;
-            margin-top: 50px;
-            padding-top: 40px;
-            border-top: 1px solid var(--rojo-borde);
-            flex-wrap: wrap;
-        }
-
-        .stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .stat-number {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--rojo-suave);
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            color: var(--rojo-claro);
-        }
-
-        /* SECTIONS */
-        section {
-            padding: 80px 0;
-            background: var(--blanco);
-        }
-
-        .section-header {
-            max-width: 750px;
-            margin-bottom: 50px;
-        }
-
-        .section-tag {
-            display: inline-block;
-            background: var(--rojo-fondo);
-            color: var(--rojo-suave);
-            padding: 4px 16px;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 15px;
-        }
-
-        .section-header h2 {
-            color: var(--rojo-suave);
-            font-size: 2.6rem;
-            margin-bottom: 18px;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .section-header h2 span {
-            color: var(--rojo-claro);
-        }
-
-        .section-header p {
-            color: var(--rojo-claro);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        /* ABOUT */
-        .about-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .about-box {
-            background: var(--blanco);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--rojo-borde);
-            transition: all 0.3s ease;
-        }
-
-        .about-box:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--sombra-hover);
-        }
-
-        .icon-wrapper {
-            width: 56px;
-            height: 56px;
-            background: var(--rojo-fondo);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 18px;
-            font-size: 1.6rem;
-            color: var(--rojo-suave);
-        }
-
-        .about-box h3 {
-            margin-bottom: 12px;
-            font-size: 1.4rem;
-            color: var(--rojo-suave);
-        }
-
-        .about-box p {
-            color: var(--rojo-claro);
-            line-height: 1.8;
-        }
-
-        /* ACTIVITIES */
-        .activities-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .card {
-            padding: 40px 32px;
-            border: 1px solid var(--rojo-borde);
-            border-radius: 16px;
-            background: var(--blanco);
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--sombra-hover);
-            border-color: var(--rojo-suave);
-        }
-
-        .card-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 14px;
-            background: var(--rojo-fondo);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 22px;
-            font-size: 1.8rem;
-            color: var(--rojo-suave);
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            font-size: 1.3rem;
-            color: var(--rojo-suave);
-        }
-
-        .card p {
-            color: var(--rojo-claro);
-            line-height: 1.8;
-        }
-
-        /* BENEFITS */
-        .benefits-list {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-        }
-
-        .benefit {
-            display: flex;
-            gap: 20px;
-            padding: 25px 30px;
-            background: var(--blanco);
-            border-radius: 14px;
-            border: 1px solid var(--rojo-borde);
-            align-items: flex-start;
-        }
-
-        .benefit:hover {
-            transform: translateX(6px);
-            box-shadow: var(--sombra);
-            border-color: var(--rojo-claro);
-        }
-
-        .icon-check {
-            min-width: 32px;
-            height: 32px;
+        .dot {
+            width: 8px;
+            height: 8px;
             border-radius: 50%;
-            background: var(--rojo-claro);
-            color: var(--blanco);
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: #8B1A1A;
+            opacity: 0.2;
+            animation: dotPulse 1.4s ease-in-out infinite;
         }
 
-        .benefit p {
+        .dot:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        .dot:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+        .dot:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes dotPulse {
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        /* TEXTO DE CARGA - ROJO SUAVE */
+        .loading-text {
+            margin-top: 24px;
+            font-size: 0.95rem;
+            color: #8B4A4A;
             font-weight: 500;
-            line-height: 1.6;
-            color: var(--rojo-texto);
+            letter-spacing: 0.3px;
         }
 
-        /* CONTACT */
-        .contact {
-            background: var(--blanco);
-            border-top: 1px solid var(--rojo-borde);
-        }
-
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .contact-box {
-            background: var(--blanco);
-            padding: 40px;
-            border-radius: 16px;
-            border: 1px solid var(--rojo-borde);
-            box-shadow: var(--sombra);
-        }
-
-        .contact-box h3 {
-            margin-bottom: 28px;
-            font-size: 1.5rem;
-            color: var(--rojo-suave);
-        }
-
-        .contact-item {
-            margin-bottom: 22px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-
-        .contact-icon {
-            min-width: 40px;
-            height: 40px;
-            border-radius: 10px;
-            background: var(--rojo-fondo);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--rojo-suave);
-        }
-
-        .contact-content strong {
-            display: block;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            color: var(--rojo-suave);
-        }
-
-        .contact-content span {
-            color: var(--rojo-claro);
-        }
-
-        .contact-form .form-group {
-            margin-bottom: 20px;
-        }
-
-        .contact-form label {
-            display: block;
-            margin-bottom: 6px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--rojo-suave);
-        }
-
-        .contact-form input,
-        .contact-form textarea,
-        .contact-form select {
-            width: 100%;
-            padding: 14px 18px;
-            border: 2px solid var(--rojo-borde);
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            background: var(--blanco);
-            color: var(--rojo-texto);
-        }
-
-        .contact-form input:focus,
-        .contact-form textarea:focus,
-        .contact-form select:focus {
-            outline: none;
-            border-color: var(--rojo-suave);
-            box-shadow: 0 0 0 4px rgba(139, 26, 26, 0.06);
-        }
-
-        .contact-form textarea {
-            min-height: 130px;
-            resize: vertical;
-        }
-
-        .submit-btn {
-            width: 100%;
-            padding: 16px;
-            background: var(--rojo-suave);
-            color: var(--blanco);
-            border: none;
-            border-radius: 10px;
-            font-weight: 700;
-            font-size: 1.05rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-btn:hover {
-            background: var(--rojo-claro);
-            transform: translateY(-2px);
-            box-shadow: var(--sombra);
-        }
-
-        .form-message {
-            display: none;
-            margin-top: 15px;
-            padding: 12px;
-            border-radius: 8px;
-            background: var(--rojo-fondo);
-            color: var(--rojo-suave);
-            font-size: 0.95rem;
-        }
-
-        /* LEGAL */
-        .legal {
-            background: var(--blanco);
-        }
-
-        .legal-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-        }
-
-        .legal article {
-            border: 1px solid var(--rojo-borde);
-            padding: 35px;
-            border-radius: 14px;
-            background: var(--blanco);
-            transition: all 0.3s ease;
-        }
-
-        .legal article:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--sombra);
-        }
-
-        .legal-icon {
-            font-size: 2rem;
-            color: var(--rojo-suave);
-            margin-bottom: 15px;
-        }
-
-        .legal article h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-            color: var(--rojo-suave);
-        }
-
-        .legal article p {
-            color: var(--rojo-claro);
-            margin-bottom: 14px;
-            line-height: 1.8;
-            font-size: 0.95rem;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #2D1B1B;
-            color: #D4B0B0;
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-        }
-
-        .footer-brand .logo {
-            color: #E8C8C8;
-        }
-
-        .footer-brand .logo span {
+        .loading-text-en {
+            margin-top: 4px;
+            font-size: 0.8rem;
             color: #C47878;
+            font-weight: 400;
         }
 
-        .footer-brand .logo .logo-icon {
-            background: var(--rojo-suave);
-        }
-
-        .footer-brand p {
-            color: #C4A0A0;
-            line-height: 1.8;
-            margin-top: 15px;
-            max-width: 420px;
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        .footer-link-item h4 {
-            color: #E8C8C8;
-            margin-bottom: 16px;
-        }
-
-        .footer-link-item a {
-            display: block;
-            color: #C4A0A0;
-            padding: 4px 0;
-            transition: color 0.3s ease;
-        }
-
-        .footer-link-item a:hover {
-            color: #E8C8C8;
-        }
-
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            margin-top: 45px;
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .footer-bottom p {
-            color: #B08888;
-            font-size: 0.9rem;
-        }
-
-        /* RESPONSIVE */
-        @media (max-width: 900px) {
-            nav {
-                display: none;
+        @media (max-width: 480px) {
+            .spinner {
+                width: 48px;
+                height: 48px;
+                border-width: 3.5px;
             }
-
-            .about-grid,
-            .activities-grid,
-            .benefits-list,
-            .contact-wrapper,
-            .legal-grid,
-            .footer-content {
-                grid-template-columns: 1fr;
+            .loading-text {
+                font-size: 0.85rem;
             }
-
-            .footer-links {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding: 60px 0 50px;
-            }
-
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            section {
-                padding: 55px 0;
-            }
-
-            .section-header h2 {
-                font-size: 2rem;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-            }
-
-            .button {
-                width: 100%;
-            }
-
-            .about-box,
-            .card,
-            .contact-box,
-            .legal article {
-                padding: 25px;
-            }
-
-            .footer-links {
-                grid-template-columns: 1fr;
+            .loader-container {
+                padding: 20px;
             }
         }
     </style>
-
 </head>
-
 <body>
 
-    <a class="skip-link" href="#inicio">Saltar al contenido principal</a>
-
-    <header>
-        <div class="container navbar">
-
-            <a href="#inicio" class="logo" aria-label="MultiDay - Inicio">
-                <span class="logo-icon">
-                    <i class="fas fa-layer-group"></i>
-                </span>
-                Multi<span>Day</span>
-            </a>
-
-            <nav aria-label="Navegación principal">
-                <a href="#nosotros">Nosotros</a>
-                <a href="#actividades">Actividades</a>
-                <a href="#beneficios">Beneficios</a>
-                <a href="#contacto" class="nav-cta">Contacto</a>
-            </nav>
-
-        </div>
-    </header>
-
-    <main>
-
-        <!-- HERO -->
-        <section class="hero" id="inicio">
-
-            <div class="container hero-content">
-
-                <div class="hero-badge">
-                    <i class="fas fa-globe"></i>
-                    Recreación Familiar
-                </div>
-
-                <h1>
-                    Inspirando momentos inolvidables en
-                    <span class="highlight">familia</span>
-                </h1>
-
-                <p>
-                    MultiDay es una plataforma informativa sobre recreación familiar.
-                    Descubre ideas, actividades y propuestas para disfrutar del
-                    tiempo libre junto a los tuyos.
-                </p>
-
-                <div class="hero-buttons">
-
-                    <a href="#actividades" class="button button-primary">
-                        <i class="fas fa-arrow-right"></i>
-                        Ver actividades
-                    </a>
-
-                    <a href="#contacto" class="button button-secondary">
-                        <i class="fas fa-envelope"></i>
-                        Contactar
-                    </a>
-
-                </div>
-
-                <div class="hero-stats">
-
-                    <div class="stat">
-                        <span class="stat-number">+50</span>
-                        <span class="stat-label">
-                            Ideas para compartir en familia
-                        </span>
-                    </div>
-
-                    <div class="stat">
-                        <span class="stat-number">Informativo</span>
-                        <span class="stat-label">
-                            Contenido de carácter informativo
-                        </span>
-                    </div>
-
-                    <div class="stat">
-                        <span class="stat-number">En desarrollo</span>
-                        <span class="stat-label">
-                            Ampliando nuestra propuesta
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- NOSOTROS -->
-        <section id="nosotros">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-tag">
-                        Sobre MultiDay
-                    </span>
-
-                    <h2>
-                        Una plataforma dedicada a la
-                        <span>recreación familiar</span>
-                    </h2>
-
-                    <p>
-                        MultiDay es un proyecto informativo orientado a ofrecer
-                        contenido sobre actividades recreativas para toda la familia.
-                        Nuestro objetivo es inspirar momentos de conexión y diversión.
-                    </p>
-
-                </div>
-
-                <div class="about-grid">
-
-                    <div class="about-box">
-
-                        <div class="icon-wrapper">
-                            <i class="fas fa-bullseye"></i>
-                        </div>
-
-                        <h3>
-                            Nuestra misión
-                        </h3>
-
-                        <p>
-                            Compartir información útil y accesible sobre actividades
-                            recreativas que fomenten el encuentro familiar y el
-                            disfrute del tiempo libre.
-                        </p>
-
-                    </div>
-
-                    <div class="about-box">
-
-                        <div class="icon-wrapper">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-
-                        <h3>
-                            Contenido informativo
-                        </h3>
-
-                        <p>
-                            MultiDay ofrece contenido de carácter estrictamente
-                            informativo. No vendemos productos ni servicios, solo
-                            compartimos ideas y sugerencias.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- ACTIVIDADES -->
-        <section id="actividades">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-tag">
-                        Actividades
-                    </span>
-
-                    <h2>
-                        Ideas para disfrutar en
-                        <span>familia</span>
-                    </h2>
-
-                    <p>
-                        Conoce algunas propuestas de actividades recreativas
-                        para compartir con los tuyos.
-                    </p>
-
-                </div>
-
-                <div class="activities-grid">
-
-                    <div class="card">
-
-                        <div class="card-icon">
-                            <i class="fas fa-tree"></i>
-                        </div>
-
-                        <h3>
-                            Aire libre
-                        </h3>
-
-                        <p>
-                            Paseos, excursiones y actividades al aire libre
-                            para conectar con la naturaleza en familia.
-                        </p>
-
-                    </div>
-
-                    <div class="card">
-
-                        <div class="card-icon">
-                            <i class="fas fa-puzzle-piece"></i>
-                        </div>
-
-                        <h3>
-                            Juegos de mesa
-                        </h3>
-
-                        <p>
-                            Tardes de juegos de mesa, rompecabezas y
-                            actividades que estimulan la creatividad.
-                        </p>
-
-                    </div>
-
-                    <div class="card">
-
-                        <div class="card-icon">
-                            <i class="fas fa-utensils"></i>
-                        </div>
-
-                        <h3>
-                            Cocina en familia
-                        </h3>
-
-                        <p>
-                            Recetas sencillas y divertidas para preparar
-                            en familia y compartir momentos en la cocina.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- BENEFICIOS -->
-        <section id="beneficios">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-tag">
-                        Beneficios
-                    </span>
-
-                    <h2>
-                        Por qué elegir
-                        <span>MultiDay</span>
-                    </h2>
-
-                    <p>
-                        Estos son los valores que guían nuestra plataforma
-                        informativa.
-                    </p>
-
-                </div>
-
-                <div class="benefits-list">
-
-                    <div class="benefit">
-                        <span class="icon-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <p>
-                            Contenido 100% informativo y gratuito.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <span class="icon-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <p>
-                            Ideas para todas las edades.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <span class="icon-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <p>
-                            Inspiración para el tiempo libre.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <span class="icon-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <p>
-                            Fomento de la convivencia familiar.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <span class="icon-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <p>
-                            Actualización constante de contenido.
-                        </p>
-                    </div>
-
-                    <div class="benefit">
-                        <span class="icon-check">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <p>
-                            Plataforma en evolución.
-                        </p>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- CONTACTO -->
-        <section class="contact" id="contacto">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-tag">
-                        Contacto
-                    </span>
-
-                    <h2>
-                        ¿Quieres saber más sobre
-                        <span>MultiDay?</span>
-                    </h2>
-
-                    <p>
-                        Escríbenos a través del formulario y recibe
-                        información sobre nuestra plataforma.
-                    </p>
-
-                </div>
-
-                <div class="contact-wrapper">
-
-                    <div class="contact-box">
-
-                        <h3>
-                            <i class="fas fa-globe" style="color: var(--rojo-suave);"></i>
-                            Información de contacto
-                        </h3>
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-
-                            <div class="contact-content">
-
-                                <strong>
-                                    Correo electrónico
-                                </strong>
-
-                                <span>
-                                    info@multiday.com
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-globe"></i>
-                            </div>
-
-                            <div class="contact-content">
-
-                                <strong>
-                                    Modalidad
-                                </strong>
-
-                                <span>
-                                    Plataforma informativa
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="contact-item">
-
-                            <div class="contact-icon">
-                                <i class="fas fa-clock"></i>
-                            </div>
-
-                            <div class="contact-content">
-
-                                <strong>
-                                    Disponibilidad
-                                </strong>
-
-                                <span>
-                                    Contenido disponible las 24 horas
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <hr style="border: none; border-top: 1px solid var(--rojo-borde); margin: 25px 0;">
-
-                        <p style="color: var(--rojo-claro); line-height: 1.8;">
-
-                            MultiDay es una plataforma informativa sobre recreación
-                            familiar. Todo el contenido publicado tiene carácter
-                            estrictamente informativo y no constituye asesoramiento
-                            de ningún tipo.
-
-                        </p>
-
-                    </div>
-
-                    <div class="contact-box">
-
-                        <h3>
-                            <i class="fas fa-paper-plane" style="color: var(--rojo-suave);"></i>
-                            Enviar una consulta
-                        </h3>
-
-                        <form class="contact-form" id="contactForm">
-
-                            <div class="form-group">
-
-                                <label for="name">
-                                    Nombre
-                                </label>
-
-                                <input type="text" id="name" name="name" autocomplete="name" required>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label for="email">
-                                    Correo electrónico
-                                </label>
-
-                                <input type="email" id="email" name="email" autocomplete="email" required>
-
-                            </div>
-
-                            <div class="form-group">
-
-                                <label for="message">
-                                    Consulta
-                                </label>
-
-                                <textarea id="message" name="message" required></textarea>
-
-                            </div>
-
-                            <button type="submit" class="submit-btn">
-
-                                <i class="fas fa-paper-plane"></i>
-                                Enviar consulta
-
-                            </button>
-
-                            <div class="form-message" id="formMessage">
-
-                                Gracias por tu consulta. Te responderemos a la brevedad.
-
-                            </div>
-
-                        </form>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- INFORMACIÓN LEGAL -->
-        <section class="legal" id="legal">
-
-            <div class="container">
-
-                <div class="section-header">
-
-                    <span class="section-tag">
-                        Información legal
-                    </span>
-
-                    <h2>
-                        Información del
-                        <span>sitio</span>
-                    </h2>
-
-                    <p>
-                        Información general sobre el uso de esta plataforma.
-                    </p>
-
-                </div>
-
-                <div class="legal-grid">
-
-                    <article>
-
-                        <div class="legal-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-
-                        <h3>
-                            Privacidad
-                        </h3>
-
-                        <p>
-                            Los datos enviados mediante el formulario se utilizan
-                            únicamente para atender la consulta correspondiente.
-                        </p>
-
-                        <p>
-                            No solicitamos información personal sensible.
-                        </p>
-
-                    </article>
-
-                    <article>
-
-                        <div class="legal-icon">
-                            <i class="fas fa-file-alt"></i>
-                        </div>
-
-                        <h3>
-                            Uso del sitio
-                        </h3>
-
-                        <p>
-                            El contenido de este sitio tiene carácter informativo
-                            y describe la propuesta de la plataforma.
-                        </p>
-
-                        <p>
-                            La información puede actualizarse periódicamente.
-                        </p>
-
-                    </article>
-
-                    <article>
-
-                        <div class="legal-icon">
-                            <i class="fas fa-info-circle"></i>
-                        </div>
-
-                        <h3>
-                            Transparencia
-                        </h3>
-
-                        <p>
-                            MultiDay es una plataforma informativa sobre recreación
-                            familiar. No comercializamos productos ni servicios.
-                        </p>
-
-                        <p>
-                            Este sitio no debe interpretarse como una entidad
-                            bancaria, financiera o de inversión.
-                        </p>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-
-        <div class="container">
-
-            <div class="footer-content">
-
-                <div class="footer-brand">
-
-                    <a href="#inicio" class="logo">
-
-                        <span class="logo-icon">
-                            <i class="fas fa-layer-group"></i>
-                        </span>
-
-                        Multi<span>Day</span>
-
-                    </a>
-
-                    <p>
-                        MultiDay es una plataforma informativa sobre recreación
-                        familiar. Inspirando momentos inolvidables en familia.
-                    </p>
-
-                </div>
-
-                <div class="footer-links">
-
-                    <div class="footer-link-item">
-
-                        <h4>
-                            Navegación
-                        </h4>
-
-                        <a href="#nosotros">
-                            Nosotros
-                        </a>
-
-                        <a href="#actividades">
-                            Actividades
-                        </a>
-
-                        <a href="#beneficios">
-                            Beneficios
-                        </a>
-
-                        <a href="#contacto">
-                            Contacto
-                        </a>
-
-                    </div>
-
-                    <div class="footer-link-item">
-
-                        <h4>
-                            Información
-                        </h4>
-
-                        <a href="#legal">
-                            Privacidad
-                        </a>
-
-                        <a href="#legal">
-                            Uso del sitio
-                        </a>
-
-                        <a href="#legal">
-                            Transparencia
-                        </a>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="footer-bottom">
-
-                <p>
-                    © 2026 MultiDay. Todos los derechos reservados.
-                </p>
-
-                <p>
-                    Plataforma informativa en desarrollo.
-                </p>
-
-            </div>
-
+    <div class="loader-container">
+
+        <!-- SOLO CÍRCULO ROJO CARGANDO -->
+        <div class="spinner"></div>
+
+        <!-- PUNTOS ANIMADOS -->
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
         </div>
 
-    </footer>
+        <!-- TEXTO DE CARGA -->
+        <p class="loading-text">Cargando...</p>
+        <p class="loading-text-en">Loading...</p>
 
+    </div>
+
+    <!-- ✅ REDIRECCIÓN POR PAÍS -->
     <script>
-
-        // Desplazamiento suave
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-
-            anchor.addEventListener('click', function(event) {
-
-                const targetId = this.getAttribute('href');
-
-                if (targetId === '#') return;
-
-                const target = document.querySelector(targetId);
-
-                if (target) {
-
-                    event.preventDefault();
-
-                    const headerOffset = 80;
-
-                    const elementPosition =
-                        target.getBoundingClientRect().top +
-                        window.scrollY -
-                        headerOffset;
-
-                    window.scrollTo({
-                        top: elementPosition,
-                        behavior: 'smooth'
-                    });
-
-                }
-
-            });
-
-        });
-
-        // Formulario
-        const contactForm = document.getElementById('contactForm');
-        const formMessage = document.getElementById('formMessage');
-
-        contactForm.addEventListener('submit', function(event) {
-
-            event.preventDefault();
-
-            if (!contactForm.checkValidity()) {
-
-                contactForm.reportValidity();
-
-                return;
-
+        function redirigirPorPais(pais) {
+            if (pais === 'AR') {
+                window.location.href = 'ar.html';
+            } else {
+                window.location.href = 'inicio.html';
             }
+        }
 
-            formMessage.style.display = 'block';
-
-            contactForm.reset();
-
-        });
-
+        fetch('https://ipapi.co/json/')
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(data) {
+                redirigirPorPais(data.country);
+            })
+            .catch(function() {
+                window.location.href = 'inicio.html';
+            });
     </script>
 
 </body>
