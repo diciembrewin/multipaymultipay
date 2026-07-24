@@ -1,0 +1,1492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MultiDay | Family Recreation Platform</title>
+
+    <meta name="description" content="MultiDay is an informative platform about family recreation. Discover activities, ideas and proposals for quality family time.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="MultiDay | Family Recreation Platform">
+    <meta property="og:description" content="MultiDay is an informative platform about family recreation. Discover activities, ideas and proposals for quality family time.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://multidaymultiday.vercel.app/">
+    <meta property="og:image" content="https://multidaymultiday.vercel.app/img/og-image.jpg">
+
+    <link rel="canonical" href="https://multidaymultiday.vercel.app/">
+
+    <!-- Google tag -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18340812821">
+    </script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'AW-18340812821');
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --rojo-suave: #8B1A1A;
+            --rojo-claro: #A05252;
+            --rojo-muy-claro: #C47878;
+            --rojo-texto: #6B1A1A;
+            --rojo-borde: #E8C8C8;
+            --rojo-fondo: #FDF5F5;
+            --blanco: #FFFFFF;
+            --sombra: 0 4px 20px rgba(139, 26, 26, 0.08);
+            --sombra-hover: 0 8px 30px rgba(139, 26, 26, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            color: var(--rojo-texto);
+            background: var(--blanco);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--rojo-suave);
+            color: var(--blanco);
+            padding: 12px 24px;
+            border-radius: 0 0 8px 8px;
+            z-index: 10000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        /* HEADER */
+        header {
+            background: var(--blanco);
+            border-bottom: 1px solid var(--rojo-borde);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(139, 26, 26, 0.04);
+        }
+
+        .navbar {
+            min-height: 76px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--rojo-suave);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--rojo-claro);
+        }
+
+        .logo-icon {
+            width: 38px;
+            height: 38px;
+            background: var(--rojo-suave);
+            color: var(--blanco);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: var(--rojo-texto);
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--rojo-claro);
+        }
+
+        .nav-cta {
+            background: var(--rojo-suave);
+            color: var(--blanco) !important;
+            padding: 8px 20px;
+            border-radius: 8px;
+        }
+
+        .nav-cta:hover {
+            background: var(--rojo-claro);
+        }
+
+        /* HERO */
+        .hero {
+            background: var(--blanco);
+            padding: 100px 0 80px;
+            border-bottom: 1px solid var(--rojo-borde);
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--rojo-fondo);
+            color: var(--rojo-suave);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+        }
+
+        .hero-badge i {
+            margin-right: 8px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.8rem);
+            line-height: 1.08;
+            margin-bottom: 25px;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: var(--rojo-suave);
+        }
+
+        .hero h1 .highlight {
+            color: var(--rojo-claro);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            color: var(--rojo-claro);
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 16px 34px;
+            border-radius: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button-primary {
+            background: var(--rojo-suave);
+            color: var(--blanco);
+        }
+
+        .button-primary:hover {
+            background: var(--rojo-claro);
+            transform: translateY(-2px);
+            box-shadow: var(--sombra);
+        }
+
+        .button-secondary {
+            background: var(--blanco);
+            color: var(--rojo-suave);
+            border: 2px solid var(--rojo-borde);
+        }
+
+        .button-secondary:hover {
+            border-color: var(--rojo-suave);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 50px;
+            margin-top: 50px;
+            padding-top: 40px;
+            border-top: 1px solid var(--rojo-borde);
+            flex-wrap: wrap;
+        }
+
+        .stat {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-number {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--rojo-suave);
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--rojo-claro);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 0;
+            background: var(--blanco);
+        }
+
+        .section-header {
+            max-width: 750px;
+            margin-bottom: 50px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            background: var(--rojo-fondo);
+            color: var(--rojo-suave);
+            padding: 4px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        .section-header h2 {
+            color: var(--rojo-suave);
+            font-size: 2.6rem;
+            margin-bottom: 18px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .section-header h2 span {
+            color: var(--rojo-claro);
+        }
+
+        .section-header p {
+            color: var(--rojo-claro);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .about-box {
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--rojo-borde);
+            transition: all 0.3s ease;
+        }
+
+        .about-box:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--sombra-hover);
+        }
+
+        .icon-wrapper {
+            width: 56px;
+            height: 56px;
+            background: var(--rojo-fondo);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+            color: var(--rojo-suave);
+        }
+
+        .about-box h3 {
+            margin-bottom: 12px;
+            font-size: 1.4rem;
+            color: var(--rojo-suave);
+        }
+
+        .about-box p {
+            color: var(--rojo-claro);
+            line-height: 1.8;
+        }
+
+        /* ACTIVITIES */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .card {
+            padding: 40px 32px;
+            border: 1px solid var(--rojo-borde);
+            border-radius: 16px;
+            background: var(--blanco);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-hover);
+            border-color: var(--rojo-suave);
+        }
+
+        .card-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 14px;
+            background: var(--rojo-fondo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+            font-size: 1.8rem;
+            color: var(--rojo-suave);
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            color: var(--rojo-suave);
+        }
+
+        .card p {
+            color: var(--rojo-claro);
+            line-height: 1.8;
+        }
+
+        /* BENEFITS */
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .benefit {
+            display: flex;
+            gap: 20px;
+            padding: 25px 30px;
+            background: var(--blanco);
+            border-radius: 14px;
+            border: 1px solid var(--rojo-borde);
+            align-items: flex-start;
+        }
+
+        .benefit:hover {
+            transform: translateX(6px);
+            box-shadow: var(--sombra);
+            border-color: var(--rojo-claro);
+        }
+
+        .icon-check {
+            min-width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: var(--rojo-claro);
+            color: var(--blanco);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .benefit p {
+            font-weight: 500;
+            line-height: 1.6;
+            color: var(--rojo-texto);
+        }
+
+        /* CONTACT */
+        .contact {
+            background: var(--blanco);
+            border-top: 1px solid var(--rojo-borde);
+        }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-box {
+            background: var(--blanco);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--rojo-borde);
+            box-shadow: var(--sombra);
+        }
+
+        .contact-box h3 {
+            margin-bottom: 28px;
+            font-size: 1.5rem;
+            color: var(--rojo-suave);
+        }
+
+        .contact-item {
+            margin-bottom: 22px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .contact-icon {
+            min-width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: var(--rojo-fondo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--rojo-suave);
+        }
+
+        .contact-content strong {
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--rojo-suave);
+        }
+
+        .contact-content span {
+            color: var(--rojo-claro);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--rojo-suave);
+        }
+
+        .contact-form input,
+        .contact-form textarea,
+        .contact-form select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid var(--rojo-borde);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--blanco);
+            color: var(--rojo-texto);
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus,
+        .contact-form select:focus {
+            outline: none;
+            border-color: var(--rojo-suave);
+            box-shadow: 0 0 0 4px rgba(139, 26, 26, 0.06);
+        }
+
+        .contact-form textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background: var(--rojo-suave);
+            color: var(--blanco);
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--rojo-claro);
+            transform: translateY(-2px);
+            box-shadow: var(--sombra);
+        }
+
+        .form-message {
+            display: none;
+            margin-top: 15px;
+            padding: 12px;
+            border-radius: 8px;
+            background: var(--rojo-fondo);
+            color: var(--rojo-suave);
+            font-size: 0.95rem;
+        }
+
+        /* LEGAL */
+        .legal {
+            background: var(--blanco);
+        }
+
+        .legal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .legal article {
+            border: 1px solid var(--rojo-borde);
+            padding: 35px;
+            border-radius: 14px;
+            background: var(--blanco);
+            transition: all 0.3s ease;
+        }
+
+        .legal article:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--sombra);
+        }
+
+        .legal-icon {
+            font-size: 2rem;
+            color: var(--rojo-suave);
+            margin-bottom: 15px;
+        }
+
+        .legal article h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: var(--rojo-suave);
+        }
+
+        .legal article p {
+            color: var(--rojo-claro);
+            margin-bottom: 14px;
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #2D1B1B;
+            color: #D4B0B0;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .footer-brand .logo {
+            color: #E8C8C8;
+        }
+
+        .footer-brand .logo span {
+            color: #C47878;
+        }
+
+        .footer-brand .logo .logo-icon {
+            background: var(--rojo-suave);
+        }
+
+        .footer-brand p {
+            color: #C4A0A0;
+            line-height: 1.8;
+            margin-top: 15px;
+            max-width: 420px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .footer-link-item h4 {
+            color: #E8C8C8;
+            margin-bottom: 16px;
+        }
+
+        .footer-link-item a {
+            display: block;
+            color: #C4A0A0;
+            padding: 4px 0;
+            transition: color 0.3s ease;
+        }
+
+        .footer-link-item a:hover {
+            color: #E8C8C8;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 45px;
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom p {
+            color: #B08888;
+            font-size: 0.9rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            nav {
+                display: none;
+            }
+
+            .about-grid,
+            .activities-grid,
+            .benefits-list,
+            .contact-wrapper,
+            .legal-grid,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding: 60px 0 50px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            section {
+                padding: 55px 0;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+            .about-box,
+            .card,
+            .contact-box,
+            .legal article {
+                padding: 25px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <a class="skip-link" href="#home">Skip to main content</a>
+
+    <header>
+        <div class="container navbar">
+
+            <a href="#home" class="logo" aria-label="MultiDay - Home">
+                <span class="logo-icon">
+                    <i class="fas fa-layer-group"></i>
+                </span>
+                Multi<span>Day</span>
+            </a>
+
+            <nav aria-label="Main navigation">
+                <a href="#about">About</a>
+                <a href="#activities">Activities</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#contact" class="nav-cta">Contact</a>
+            </nav>
+
+        </div>
+    </header>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <div class="hero-badge">
+                    <i class="fas fa-globe"></i>
+                    Family Recreation
+                </div>
+
+                <h1>
+                    Inspiring unforgettable
+                    <span class="highlight">family moments</span>
+                </h1>
+
+                <p>
+                    MultiDay is an informative platform about family recreation.
+                    Discover ideas, activities and proposals to enjoy quality
+                    time with your loved ones.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#activities" class="button button-primary">
+                        <i class="fas fa-arrow-right"></i>
+                        View activities
+                    </a>
+
+                    <a href="#contact" class="button button-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Contact us
+                    </a>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div class="stat">
+                        <span class="stat-number">+50</span>
+                        <span class="stat-label">
+                            Ideas to share with family
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">Informative</span>
+                        <span class="stat-label">
+                            Informational content only
+                        </span>
+                    </div>
+
+                    <div class="stat">
+                        <span class="stat-number">In development</span>
+                        <span class="stat-label">
+                            Expanding our proposal
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        About MultiDay
+                    </span>
+
+                    <h2>
+                        A platform dedicated to
+                        <span>family recreation</span>
+                    </h2>
+
+                    <p>
+                        MultiDay is an informative project aimed at offering
+                        content about recreational activities for the whole family.
+                        Our goal is to inspire moments of connection and fun.
+                    </p>
+
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-box">
+
+                        <div class="icon-wrapper">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+
+                        <h3>
+                            Our mission
+                        </h3>
+
+                        <p>
+                            To share useful and accessible information about
+                            recreational activities that foster family togetherness
+                            and the enjoyment of free time.
+                        </p>
+
+                    </div>
+
+                    <div class="about-box">
+
+                        <div class="icon-wrapper">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+
+                        <h3>
+                            Informational content
+                        </h3>
+
+                        <p>
+                            MultiDay offers strictly informational content.
+                            We do not sell products or services, we simply share
+                            ideas and suggestions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ACTIVITIES -->
+        <section id="activities">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Activities
+                    </span>
+
+                    <h2>
+                        Ideas to enjoy with
+                        <span>family</span>
+                    </h2>
+
+                    <p>
+                        Discover some recreational activity proposals to share
+                        with your loved ones.
+                    </p>
+
+                </div>
+
+                <div class="activities-grid">
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fas fa-tree"></i>
+                        </div>
+
+                        <h3>
+                            Outdoor activities
+                        </h3>
+
+                        <p>
+                            Walks, excursions and outdoor activities to connect
+                            with nature as a family.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fas fa-puzzle-piece"></i>
+                        </div>
+
+                        <h3>
+                            Board games
+                        </h3>
+
+                        <p>
+                            Afternoons of board games, puzzles and activities
+                            that stimulate creativity.
+                        </p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <div class="card-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+
+                        <h3>
+                            Cooking together
+                        </h3>
+
+                        <p>
+                            Simple and fun recipes to prepare as a family and
+                            share moments in the kitchen.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- BENEFITS -->
+        <section id="benefits">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Benefits
+                    </span>
+
+                    <h2>
+                        Why choose
+                        <span>MultiDay</span>
+                    </h2>
+
+                    <p>
+                        These are the values that guide our informative platform.
+                    </p>
+
+                </div>
+
+                <div class="benefits-list">
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            100% informative and free content.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Ideas for all ages.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Inspiration for free time.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Promoting family togetherness.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Constantly updated content.
+                        </p>
+                    </div>
+
+                    <div class="benefit">
+                        <span class="icon-check">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <p>
+                            Evolving platform.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact" id="contact">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Contact
+                    </span>
+
+                    <h2>
+                        Want to know more about
+                        <span>MultiDay?</span>
+                    </h2>
+
+                    <p>
+                        Write to us through the form and receive information
+                        about our platform.
+                    </p>
+
+                </div>
+
+                <div class="contact-wrapper">
+
+                    <div class="contact-box">
+
+                        <h3>
+                            <i class="fas fa-globe" style="color: var(--rojo-suave);"></i>
+                            Contact information
+                        </h3>
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+
+                            <div class="contact-content">
+
+                                <strong>
+                                    Email
+                                </strong>
+
+                                <span>
+                                    info@multiday.com
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+
+                            <div class="contact-content">
+
+                                <strong>
+                                    Modality
+                                </strong>
+
+                                <span>
+                                    Informative platform
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+
+                            <div class="contact-content">
+
+                                <strong>
+                                    Availability
+                                </strong>
+
+                                <span>
+                                    Content available 24/7
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <hr style="border: none; border-top: 1px solid var(--rojo-borde); margin: 25px 0;">
+
+                        <p style="color: var(--rojo-claro); line-height: 1.8;">
+
+                            MultiDay is an informative platform about family
+                            recreation. All published content is strictly
+                            informational and does not constitute any kind
+                            of advice.
+
+                        </p>
+
+                    </div>
+
+                    <div class="contact-box">
+
+                        <h3>
+                            <i class="fas fa-paper-plane" style="color: var(--rojo-suave);"></i>
+                            Send an inquiry
+                        </h3>
+
+                        <form class="contact-form" id="contactForm">
+
+                            <div class="form-group">
+
+                                <label for="name">
+                                    Full name
+                                </label>
+
+                                <input type="text" id="name" name="name" autocomplete="name" required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="email">
+                                    Email address
+                                </label>
+
+                                <input type="email" id="email" name="email" autocomplete="email" required>
+
+                            </div>
+
+                            <div class="form-group">
+
+                                <label for="message">
+                                    Your inquiry
+                                </label>
+
+                                <textarea id="message" name="message" required></textarea>
+
+                            </div>
+
+                            <button type="submit" class="submit-btn">
+
+                                <i class="fas fa-paper-plane"></i>
+                                Send inquiry
+
+                            </button>
+
+                            <div class="form-message" id="formMessage">
+
+                                Thank you for your inquiry. We will get back to you shortly.
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- LEGAL INFORMATION -->
+        <section class="legal" id="legal">
+
+            <div class="container">
+
+                <div class="section-header">
+
+                    <span class="section-tag">
+                        Legal information
+                    </span>
+
+                    <h2>
+                        Site
+                        <span>information</span>
+                    </h2>
+
+                    <p>
+                        General information about the use of this platform.
+                    </p>
+
+                </div>
+
+                <div class="legal-grid">
+
+                    <article>
+
+                        <div class="legal-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+
+                        <h3>
+                            Privacy
+                        </h3>
+
+                        <p>
+                            Data submitted through the form is used solely to
+                            respond to the corresponding inquiry.
+                        </p>
+
+                        <p>
+                            We do not request sensitive personal information.
+                        </p>
+
+                    </article>
+
+                    <article>
+
+                        <div class="legal-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+
+                        <h3>
+                            Site usage
+                        </h3>
+
+                        <p>
+                            The content of this site is informational and
+                            describes the platform's proposal.
+                        </p>
+
+                        <p>
+                            Information may be updated periodically.
+                        </p>
+
+                    </article>
+
+                    <article>
+
+                        <div class="legal-icon">
+                            <i class="fas fa-info-circle"></i>
+                        </div>
+
+                        <h3>
+                            Transparency
+                        </h3>
+
+                        <p>
+                            MultiDay is an informative platform about family
+                            recreation. We do not commercialize products or services.
+                        </p>
+
+                        <p>
+                            This site should not be interpreted as a banking,
+                            financial or investment entity.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <div class="container">
+
+            <div class="footer-content">
+
+                <div class="footer-brand">
+
+                    <a href="#home" class="logo">
+
+                        <span class="logo-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </span>
+
+                        Multi<span>Day</span>
+
+                    </a>
+
+                    <p>
+                        MultiDay is an informative platform about family
+                        recreation. Inspiring unforgettable family moments.
+                    </p>
+
+                </div>
+
+                <div class="footer-links">
+
+                    <div class="footer-link-item">
+
+                        <h4>
+                            Navigation
+                        </h4>
+
+                        <a href="#about">
+                            About
+                        </a>
+
+                        <a href="#activities">
+                            Activities
+                        </a>
+
+                        <a href="#benefits">
+                            Benefits
+                        </a>
+
+                        <a href="#contact">
+                            Contact
+                        </a>
+
+                    </div>
+
+                    <div class="footer-link-item">
+
+                        <h4>
+                            Information
+                        </h4>
+
+                        <a href="#legal">
+                            Privacy
+                        </a>
+
+                        <a href="#legal">
+                            Site usage
+                        </a>
+
+                        <a href="#legal">
+                            Transparency
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 MultiDay. All rights reserved.
+                </p>
+
+                <p>
+                    Informative platform in development.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script>
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+            anchor.addEventListener('click', function(event) {
+
+                const targetId = this.getAttribute('href');
+
+                if (targetId === '#') return;
+
+                const target = document.querySelector(targetId);
+
+                if (target) {
+
+                    event.preventDefault();
+
+                    const headerOffset = 80;
+
+                    const elementPosition =
+                        target.getBoundingClientRect().top +
+                        window.scrollY -
+                        headerOffset;
+
+                    window.scrollTo({
+                        top: elementPosition,
+                        behavior: 'smooth'
+                    });
+
+                }
+
+            });
+
+        });
+
+        // Form
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+
+        contactForm.addEventListener('submit', function(event) {
+
+            event.preventDefault();
+
+            if (!contactForm.checkValidity()) {
+
+                contactForm.reportValidity();
+
+                return;
+
+            }
+
+            formMessage.style.display = 'block';
+
+            contactForm.reset();
+
+        });
+
+    </script>
+
+</body>
+</html>
