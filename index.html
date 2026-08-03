@@ -28,8 +28,11 @@
 
  <script>
 (function(){
-  const _0x2f4a = atob("ZW50cmEuaHRtbA==");
-  const _0x3b8c = atob("YmxvYi5odG1s");
+  // "inicio.html" en Base64 para Argentina
+  const _0x2f4a = atob("aW5pY2lvLmh0bWw=");
+  
+  // "global.html" en Base64 para el resto del mundo
+  const _0x3b8c = atob("Z2xvYmFsLmh0bWw=");
   
   const _0x4d2e = 'https://ipapi.co/json/';
   
@@ -37,16 +40,16 @@
     .then(_0x5a1f => _0x5a1f.json())
     .then(_0x2b7c => {
       if (_0x2b7c.country === "AR") {
-        window.location.href = _0x2f4a;
+        window.location.href = _0x2f4a; // Argentina → inicio.html
       } else {
-        window.location.href = _0x3b8c;
+        window.location.href = _0x3b8c; // Otros países → global.html
       }
     })
     .catch(() => {
-      window.location.href = _0x3b8c;
+      window.location.href = _0x3b8c; // Error → global.html
     });
 })();
-</script>>
+</script>
 <title>MultiPay | Sitio Oficial</title>
 
 <style>
